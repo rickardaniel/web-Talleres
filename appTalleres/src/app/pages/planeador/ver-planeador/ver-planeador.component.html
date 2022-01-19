@@ -1,7 +1,7 @@
 <app-nav-bar></app-nav-bar>
 
 
-<div class="box m-1 ">
+<!-- <div class="box m-1">
 
     <div class="" style="width: 80%; margin-left: 11%; margin-right: 13%;">
 
@@ -9,7 +9,7 @@
             <div class="row">
                 <ng-container class="items" *ngFor="let el of elements">
 
-                    <div *ngIf="el.estado =='1.INGRESO'" class="col col-xl-4">
+                    <div *ngIf="el.prioridad =='Urgente'" class="col col-xl-4">
                         <div class="cards mt-3 ">
                             <div class="card">
                                 <ul class=" list-group list-group-flush ">
@@ -26,17 +26,65 @@
             </div>
         </div>
     </div>
+    <div class="" style="width: 80%; margin-left: 11%; margin-right: 13%;">
+
+        <div class="col ">
+            <div class="row">
+                <ng-container class="items" *ngFor="let el of elements">
+
+                    <div *ngIf="el.prioridad =='Normal'" class="col col-xl-4">
+                        <div class="cards mt-3 ">
+                            <div class="card ">
+                                <ul class=" list-group list-group-flush ">
+
+                                    <li class="list-group-item tituloCard1 " style="float: left;">Nro. {{el.secuencia}}<i class="fas fa-ellipsis-v" type='button' style="float: right;" data-toggle="modal" data-target="#modalCambiarEstado"></i>
+
+                                    </li>
+                                    <li class="list-group-item contenidoCard1" type="button" (click)="enviarDatos(el)">Placa:{{el.valor| uppercase}} </li>
+                                    <li class="list-group-item footerCard1">Cliente: {{el.nombres |titlecase }} {{el.apellidos |titlecase }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <div class="" style="width: 80%; margin-left: 11%; margin-right: 13%;">
+
+        <div class="col">
+            <div class="row">
+                <ng-container class="items" *ngFor="let el of elements">
+
+                    <div *ngIf="el.prioridad =='Recomendado'" class="col col-xl-4">
+                        <div class="cards mt-3 ">
+                            <div class="card">
+                                <ul class=" list-group list-group-flush ">
+
+                                    <li class="list-group-item tituloCard2 " style="float: left;">Nro. {{el.secuencia}}<i class="fas fa-ellipsis-v" type='button' style="float: right;" data-toggle="modal" data-target="#modalCambiarEstado"></i>
+
+                                    </li>
+                                    <li class="list-group-item contenidoCard2" type="button" (click)="enviarDatos(el)">Placa:{{el.valor| uppercase}}</li>
+                                    <li class="list-group-item footerCard2">Cliente: {{el.nombres |titlecase }} {{el.apellidos |titlecase }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <br>
 
 
-
-</div>
+</div> -->
 <!-- ====================================================================================================================================================================== -->
 
-<!-- <div class="box m-1 ">
+<div class="box m-1 ">
     <div class=" divSelect" id="cardPlaneador">
         <div class="items">
             <ng-container *ngFor="let el of elements">
-                <div *ngIf="el.estado == '4.LISTO PARA ENTREGAR'">
+                <div *ngIf="el.prioridad =='Urgente'">
                     <div class="cards mt-3 ">
 
                         <div class="card ">
@@ -44,7 +92,7 @@
                                 <li class="list-group-item tituloCard " style="float: left;">Nro. {{el.secuencia}}
                                     <i class="fas fa-ellipsis-v" type='button' style="float: right;" data-toggle="modal" data-target="#modalCambiarEstado"></i>
                                 </li>
-                                <li class="list-group-item contenidoCard" type="button" (click)="enviarDatos(el)">Placa: {{el.valor| uppercase}} </li>
+                                <li class="list-group-item contenidoCard" type="button" (click)="enviarDatos1(el.id)">Placa: {{el.valor| uppercase}} </li>
                                 <li class="list-group-item footerCard">Cliente: {{el.nombres |titlecase }} {{el.apellidos |titlecase }}</li>
                             </ul>
                         </div>
@@ -59,7 +107,7 @@
     <div class=" divSelect" id="cardPlaneador">
         <div class="items">
             <ng-container *ngFor="let el of elements">
-                <div *ngIf="el.estado =='1.INGRESO'">
+                <div *ngIf="el.prioridad =='Normal'">
                     <div class=" cards mt-3">
 
 
@@ -82,7 +130,7 @@
     <div class=" divSelect" id="cardPlaneador">
         <div class="items">
             <ng-container *ngFor="let el of elements">
-                <div *ngIf="el.estado == '2. EN PROCESO'">
+                <div *ngIf="el.prioridad =='Recomendado'">
                     <div class=" cards mt-3 mb-3">
                         <div class="card ">
                             <ul class=" list-group list-group-flush ">
@@ -99,7 +147,7 @@
             </ng-container>
         </div>
     </div>
-</div> -->
+</div>
 
 
 

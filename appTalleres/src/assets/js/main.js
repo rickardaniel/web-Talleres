@@ -561,14 +561,32 @@ function slider6() {
 function slider5() {
 
     $(document).ready(function() {
+        setTimeout(function() {;
 
-        $('.items').slick({
-            infinite: true,
-            slidesToShow: 3,
-            slidesToScroll: 3
-        });
+            $('.items').slick({
+                dots: true,
+                infinite: true,
+                // speed: 700,
+                // autoplay: true,
+                // autoplaySpeed: 2000,
+                arrows: true,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            });
+        }, 300);
 
     });
+
+    // $('.items').slick({
+    //     dots: true,
+    //     infinite: true,
+    //     speed: 700,
+    //     autoplay: true,
+    //     autoplaySpeed: 2000,
+    //     arrows: false,
+    //     slidesToShow: 1,
+    //     slidesToScroll: 1
+    // });
 
 }
 

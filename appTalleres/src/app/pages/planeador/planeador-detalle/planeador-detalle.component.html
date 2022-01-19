@@ -19,10 +19,10 @@
             <tbody class="tbody">
 
                 <tr mdbTableCol *ngFor="let el of elements2">
-                    <th scope="row">{{el.nOrden}}</th>
+                    <th scope="row">{{el.secuencia}}</th>
                     <td>{{el.fecha}}</td>
-                    <td>{{el.cliente}}</td>
-                    <td>{{el.placa}}</td>
+                    <td>{{el.nombres |titlecase}} {{el.apellidos |titlecase}}</td>
+                    <td>{{el.valor}}</td>
                     <td>{{el.marca}}</td>
                     <td>{{el.km}}</td>
                     <td>{{el.problema}}</td>
@@ -203,7 +203,9 @@
         <button class="btn btn-primary btO"><i class="fas fa-wrench"></i> Repuesto</button>
         <button class="btn btn-primary btO"> <i class="fas fa-list-alt"></i> Todo</button>
         <button class="btn btn-warning btO"><i class="fas fa-print"></i> Imprimir</button>
-        <button class="btn btn-Success btO"><i class="fas fa-reply-all"></i> Reenviar</button>
+        <!-- <button class="btn btn-Success btO"><i class="fas fa-reply-all"></i> Reenviar</button> -->
+        <button type="button " class="btn btO " style="background-color: #03A9F4; color: white; " data-toggle="modal " data-target=".bd-example-modal-xl "><i class="fas fa-reply "></i> Reenviar</button>
+
         <button class="btn btn-success btO"> <i class="fab fa-whatsapp"></i> WhatsApp</button>
 
     </div>

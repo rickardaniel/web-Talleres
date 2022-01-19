@@ -1,15 +1,58 @@
 {
     "data": [{
+            "id": "111",
+            "secuencia": "8",
+            "fecha": "2022-01-18",
+            "nombres": " MANUEL EULOGIO ",
+            "apellidos": "ZARI MOROCHO",
+            "estado": "1.INGRESO",
+            "prioridad": "Urgente",
+            "atributo": "Placa",
+            "valor": "LBA035"
+        },
+        {
+            "id": "109",
+            "secuencia": "1",
+            "fecha": "2022-01-17",
+            "nombres": "CHRISTIAN ANDRES",
+            "apellidos": "VILLACIS ORELLANA",
+            "estado": "1.INGRESO",
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "XYZ456"
+        },
+        {
+            "id": "108",
+            "secuencia": "6",
+            "fecha": "2022-01-17",
+            "nombres": " MANUEL EULOGIO ",
+            "apellidos": "ZARI MOROCHO",
+            "estado": "2.POST VENTA CHEQUEO ",
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "LBA035"
+        },
+        {
+            "id": "103",
+            "secuencia": "1",
+            "fecha": "2022-01-17",
+            "nombres": " MANUEL EULOGIO ",
+            "apellidos": "ZARI MOROCHO",
+            "estado": "1.INGRESO",
+            "prioridad": "Urgente",
+            "atributo": "Placa",
+            "valor": "LBA035"
+        },
+        {
             "id": "95",
             "secuencia": "2",
             "fecha": "2022-01-10",
             "nombres": "JULIO MIGUEL",
             "apellidos": "CARCHIPULLA SAGBAY",
-            "tipo_cliente": "Tecnico Automotriz",
             "estado": "1.INGRESO",
-            "atributo": "PLACA",
-            "valor": "XYZ456",
-            "servicio": "MAN 50MIL KM"
+            "prioridad": "Urgente",
+            "atributo": "Placa",
+            "valor": "XYZ456"
         },
         {
             "id": "94",
@@ -17,11 +60,10 @@
             "fecha": "2022-01-10",
             "nombres": "CHRISTIAN ANDRES",
             "apellidos": "VILLACIS ORELLANA",
-            "tipo_cliente": "Consumidor Final",
             "estado": "1.INGRESO",
-            "atributo": "PLACA",
-            "valor": "XYZ456",
-            "servicio": "MAN 50MIL KM"
+            "prioridad": "Urgente",
+            "atributo": "Placa",
+            "valor": "XYZ456"
         },
         {
             "id": "92",
@@ -29,11 +71,10 @@
             "fecha": "2021-11-17",
             "nombres": "WILMER ALEJANDRO",
             "apellidos": "BARRETO GRANDA",
-            "tipo_cliente": "Tecnico Automotriz",
             "estado": "4.LISTO PARA ENTREGAR",
-            "atributo": "PLACA",
-            "valor": "lbs0881",
-            "servicio": "LATONERIA"
+            "prioridad": "Recomendado",
+            "atributo": "Placa",
+            "valor": "lbs0881"
         },
         {
             "id": "91",
@@ -41,11 +82,10 @@
             "fecha": "2021-11-10",
             "nombres": "PAULETTE SALOME ",
             "apellidos": "GALVEZ CORDERO",
-            "tipo_cliente": "Consumidor Final",
             "estado": "1.INGRESO",
-            "atributo": "PLACA",
-            "valor": "12479",
-            "servicio": "LATONERIA"
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "12479"
         },
         {
             "id": "90",
@@ -53,11 +93,10 @@
             "fecha": "2021-11-08",
             "nombres": "TITO",
             "apellidos": "VALAREZO",
-            "tipo_cliente": "Consumidor Final",
             "estado": "4.LISTO PARA ENTREGAR",
-            "atributo": "PLACA",
-            "valor": "lbs0881",
-            "servicio": "MANTENIMIENTO 100MIL KM"
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "lbs0881"
         },
         {
             "id": "89",
@@ -65,11 +104,10 @@
             "fecha": "2021-10-22",
             "nombres": "JONI",
             "apellidos": "ZHUNAULA",
-            "tipo_cliente": "Consumidor Final",
             "estado": "4.LISTO PARA ENTREGAR",
-            "atributo": "PLACA",
-            "valor": "pvi0326",
-            "servicio": "PINTURA DE VEHICULO "
+            "prioridad": "Urgente",
+            "atributo": "Placa",
+            "valor": "pvi0326"
         },
         {
             "id": "88",
@@ -77,11 +115,10 @@
             "fecha": "2021-10-18",
             "nombres": "TITO ANDRES",
             "apellidos": "VALAREZO FLORES ",
-            "tipo_cliente": "Consumidor Final",
             "estado": "2. EN PROCESO",
-            "atributo": "PLACA",
-            "valor": "lbs0881",
-            "servicio": "MANTENIMIENTO 100MIL KM"
+            "prioridad": "Recomendado",
+            "atributo": "Placa",
+            "valor": "lbs0881"
         },
         {
             "id": "87",
@@ -89,11 +126,10 @@
             "fecha": "2021-10-16",
             "nombres": "TITO",
             "apellidos": "VALAREZO",
-            "tipo_cliente": "Consumidor Final",
             "estado": "4.LISTO PARA ENTREGAR",
-            "atributo": "PLACA",
-            "valor": "lbs0881",
-            "servicio": "LATONERIA"
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "lbs0881"
         },
         {
             "id": "86",
@@ -101,11 +137,10 @@
             "fecha": "2021-10-11",
             "nombres": "EDISON ",
             "apellidos": "MACAS ",
-            "tipo_cliente": "Consumidor Final",
             "estado": "1.INGRESO",
-            "atributo": "PLACA",
-            "valor": "lba001",
-            "servicio": "LATONERIA"
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "lba001"
         },
         {
             "id": "85",
@@ -113,11 +148,10 @@
             "fecha": "2021-10-06",
             "nombres": "SANTIAGO SEBASTIáN",
             "apellidos": "VALDIVIESO POLO",
-            "tipo_cliente": "Consumidor Final",
             "estado": "1.INGRESO",
-            "atributo": "PLACA",
-            "valor": "Pbd4978",
-            "servicio": "LATONERIA"
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "Pbd4978"
         },
         {
             "id": "84",
@@ -125,11 +159,10 @@
             "fecha": "2021-10-05",
             "nombres": "TITO",
             "apellidos": "VALAREZO",
-            "tipo_cliente": "Consumidor Final",
             "estado": "4.LISTO PARA ENTREGAR",
-            "atributo": "PLACA",
-            "valor": "lbs0881",
-            "servicio": "LATONERIA"
+            "prioridad": "Recomendado",
+            "atributo": "Placa",
+            "valor": "lbs0881"
         },
         {
             "id": "83",
@@ -137,11 +170,10 @@
             "fecha": "2021-09-24",
             "nombres": "EDGAR ADRIAN",
             "apellidos": "LEDESMA CORDOVA",
-            "tipo_cliente": "Consumidor Final",
             "estado": "4.LISTO PARA ENTREGAR",
-            "atributo": "PLACA",
-            "valor": "LBD-1526",
-            "servicio": "LATONERIA"
+            "prioridad": "Urgente",
+            "atributo": "Placa",
+            "valor": "LBD-1526"
         },
         {
             "id": "82",
@@ -149,11 +181,10 @@
             "fecha": "2021-09-24",
             "nombres": "PAUL SEBASTIAN ",
             "apellidos": "AGUIRRE CARDENAS",
-            "tipo_cliente": "Consumidor Final",
             "estado": "2.POST VENTA CHEQUEO ",
-            "atributo": "PLACA",
-            "valor": "lbs0881",
-            "servicio": "MANTENIMIENTO 100MIL KM"
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "lbs0881"
         },
         {
             "id": "81",
@@ -161,11 +192,10 @@
             "fecha": "2021-09-24",
             "nombres": "EDGAR RODRIGO",
             "apellidos": "LEDESMA NIETO",
-            "tipo_cliente": "Consumidor Final",
             "estado": "1.INGRESO",
-            "atributo": "PLACA",
-            "valor": "TDL789",
-            "servicio": "LATONERIA"
+            "prioridad": "Recomendado",
+            "atributo": "Placa",
+            "valor": "TDL789"
         },
         {
             "id": "80",
@@ -173,11 +203,10 @@
             "fecha": "2021-09-23",
             "nombres": "EDGAR RODRIGO",
             "apellidos": "LEDESMA NIETO",
-            "tipo_cliente": "Consumidor Final",
             "estado": "1.INGRESO",
-            "atributo": "PLACA",
-            "valor": "AVD456",
-            "servicio": "LATONERIA"
+            "prioridad": "Recomendado",
+            "atributo": "Placa",
+            "valor": "AVD456"
         },
         {
             "id": "79",
@@ -185,59 +214,10 @@
             "fecha": "2021-09-23",
             "nombres": "EDGAR ADRIAN",
             "apellidos": "LEDESMA CORDOVA",
-            "tipo_cliente": "Consumidor Final",
             "estado": "1.INGRESO",
-            "atributo": "PLACA",
-            "valor": "LBD-1526",
-            "servicio": "LATONERIA"
-        },
-        {
-            "id": "78",
-            "secuencia": "717",
-            "fecha": "2021-09-22",
-            "nombres": "EDGAR ADRIAN",
-            "apellidos": "LEDESMA CORDOVA",
-            "tipo_cliente": "Consumidor Final",
-            "estado": "1.INGRESO",
-            "atributo": "PLACA",
-            "valor": "LBD-1526",
-            "servicio": "LATONERIA"
-        },
-        {
-            "id": "77",
-            "secuencia": "223",
-            "fecha": "2021-09-18",
-            "nombres": "TITO",
-            "apellidos": "VALAREZO",
-            "tipo_cliente": "Consumidor Final",
-            "estado": "4.LISTO PARA ENTREGAR",
-            "atributo": "PLACA",
-            "valor": "lbs0881",
-            "servicio": "MANTENIMIENTO 100MIL KM"
-        },
-        {
-            "id": "76",
-            "secuencia": "661",
-            "fecha": "2021-09-15",
-            "nombres": "TITO",
-            "apellidos": "VALAREZO",
-            "tipo_cliente": "Consumidor Final",
-            "estado": "5.ENTREGADO",
-            "atributo": "PLACA",
-            "valor": "lbs0881",
-            "servicio": "MANTENIMIENTO 20MIL KM"
-        },
-        {
-            "id": "75",
-            "secuencia": "300",
-            "fecha": "2021-08-25",
-            "nombres": "VICENTE",
-            "apellidos": "MEJIA",
-            "tipo_cliente": "Tecnico Automotriz",
-            "estado": "1.INGRESO",
-            "atributo": "PLACA",
-            "valor": "mbc535",
-            "servicio": "MAN 50MIL KM"
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "LBD-1526"
         }
     ]
 }

@@ -132,7 +132,13 @@ getAllOA(url:string){
 
 
   postALL(form:any, url:string){
-    return this.http.post(this.urlCors+this.urlTalleres+url+'/insert', form);
+    let Options ={
+      headers: new HttpHeaders({
+        'Content-type': 'application/json'
+      }),
+      body:form
+    }
+    return this.http.post(this.urlCors+this.urlTalleres+url+'/insert', form, Options);
   
   }
 
