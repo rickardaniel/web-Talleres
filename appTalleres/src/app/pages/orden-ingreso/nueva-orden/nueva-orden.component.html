@@ -1,0 +1,492 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="box m-1">
+
+    <h1 class="mb-2 " style="margin-top: 0.3em; padding-top: 0.3em;">Recepción de Nuevo Vehículo</h1>
+
+    <div>
+        <p id="p1">No. 0001</p>
+    </div>
+    <br>
+    <br>
+
+    <div class="cabecera m-3 divSelect">
+        <div class="row   fila">
+            <div class="col col-xl-6 col-lg-6 col-md 6 col-sm-6  col-xs-6">
+                <div class="row ml-3 ">
+
+                    <form [formGroup]="formAuto" class="login100-form validate-form flex-sb flex-w animated text-center">
+                        <div>
+                            <fieldset>
+                                <input formControlName="placa" type="search" id="btnSearch" placeholder="Placa Vehículo" />
+                                <button id="bSearch" type="button" (click)="obtenerVehiculo(formAuto.value)">
+                                    <i class="fa fa-search" id="idSearch"></i>
+                                </button></fieldset>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-lg-6 col-md 6 col-sm-6 col-xs-6">
+                <div class="row ml-3  ">
+                    <form [formGroup]="formCliente" class="login100-form validate-form flex-sb flex-w animated text-center">
+                        <div>
+                            <fieldset>
+                                <input formControlName="PersonaComercio_cedulaRuc" type="search" id="btnSearch" placeholder="CI/RUC/NOMBRE" />
+                                <button id="bSearch" type="button" (click)="obtenerCliente(formCliente.value)">
+                                <i class="fa fa-search" id="idSearch"></i>
+                            </button></fieldset>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- ============================================================ INICIO FORMULARIO ============================================================= -->
+
+    <form [formGroup]="formNuevaOrden" (ngSubmit)="crearOrden(formNuevaOrden.value)" enctype="multipart/form-data">
+        <!-- ========================================================== CARD VEHICULO ============================================================== -->
+
+        <input type="text" class="form-control" formControlName="secuencia" style="width: 12em;  margin-left: 35em;">
+        <div class=" row divSelect" id="CARDS">
+
+            <div class="col col-xl-5 col-lg-5 col-md-9">
+
+
+                <div class="row divSelect m-4" hidden id="divAtributos">
+                    <!-- <h1 class="mb-3">Datos del Vehículo <i class="fas fa-car-side"></i></h1> -->
+                    <div class="row divSelect">
+
+
+
+                        <div class="col col-xl-10 col-lg-12 col-md-12   ">
+                            <div class="card  mb-3 " style="border-color: #03A9F4;;">
+                                <div class="card-header text-center font-weight-bold " style="font-size: 1.5em; background-color: #828282; color: white;">Datos del Vehículo <i class="fas fa-car-side"></i></div>
+                                <div class="row divSelect mt-4 mb-4">
+                                    <div class="col col-xl-5 col-lg-5 col-md-6 " style="text-align: center;" *ngFor="let atri of datosVehiculo; let i=index">
+                                        <strong> {{atri.atributo|titlecase }}: </strong> {{atri.valor}}
+                                        <input type="text" hidden class="form-control" formControlName="atributos" value="{{atri.equipoattr_id|titlecase }}">
+                                        <input type="text" hidden class="form-control" formControlName="valores" value="{{atri.valor}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <!-- ========================================================== CARD  CLIENTE ============================================================== -->
+
+            <div class="col col-xl-5 col-lg-5 col-md-9">
+
+                <div class="row divSelect m-4" hidden id="infoCliente">
+
+                    <div class="row divSelect">
+
+
+
+                        <div class="col col-xl-10 col-lg-12 col-md-12   ">
+                            <div class="card  mb-3 " style="border-color: #03A9F4;;">
+                                <div class="card-header text-center font-weight-bold " style="font-size: 1.5em; background-color: #828282; color: white;">Datos del cliente <i class="fas fa-user-tie"></i></div>
+                                <div class="row divSelect mt-4 mb-4" *ngFor="let cliente of clientes">
+                                    <div class="col col-xl-5 col-lg-5 col-md-5 mb-1  ">
+                                        <strong> Nombre : </strong> {{cliente.nombres |titlecase}}
+                                        <br>
+
+                                        <strong> Apellidos : </strong> {{cliente.apellidos |titlecase}}
+
+                                    </div>
+                                    <div class="col col-xl-5 col-lg-5 col-md-6 mb-1 mr-1 ">
+
+                                        <strong> Celular : </strong> {{cliente.celular|titlecase}}
+                                        <br>
+
+                                        <strong> E-mail : </strong> {{ cliente.email|titlecase}}
+                                    </div>
+                                    <!-- <select formControlName="cliente" name="" id="">
+                                        <option value="{{cliente.PersonaComercio_cedulaRuc}}"> {{cliente.PersonaComercio_cedulaRuc}}</option>
+                                       
+
+                                    </select> -->
+                                    <input formControlName="cliente" hidden class="form-control" value="{{cliente.PersonaComercio_cedulaRuc}}" id="idCliente" placeholder="">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <!-- ========================================================== CARD INGRESAR ATRIBUTOS VEHICULO ============================================================== -->
+
+        <div class="" id="crearAtributos" hidden>
+
+
+            <div class="row ">
+                <h1 class="mb-3"> Ingresar datos del Vehículo <i class="fas fa-car-side"></i></h1>
+
+            </div>
+
+
+
+            <div class="row">
+
+                <div class="col ">
+                    <div class="row divSelect ">
+
+                        <div class="col col-xl-3 col-lg-4 col-md-4 col-sm-8 col-xs-8" *ngFor="let atri of atributos; let i=index">
+
+
+                            <h5>
+                                <mdb-badge id="subTitulo1">{{atri.nombreattr |titlecase}} <i class="fas fa-signature"></i></mdb-badge>
+                            </h5>
+
+                            <div class="form-group">
+
+                                <input type="text" name="valores" formControlName="valores" class="form-control form-icon-trailing entrada1" id="floatingInputNombre1{{i}}" />
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="row divSelect mr-4 ml-4 mb-3 pr-2 pl-1 ">
+
+            <div class="col col-xl-9 col-lg-10 col-md-12 col-sm-12 col-xs-12 ">
+
+                <h6>
+                    <mdb-badge id="subTitulo1" style="text-align: right;"> Observaciones : </mdb-badge>
+                    <!-- <i class="far fa-eye"></i> -->
+                </h6>
+
+                <!-- <h6 style="font-weight: bold; ">Observaciones:</h6> -->
+
+                <textarea formControlName="observaciones" type=" " class="form-control " name=" " id=" " rows="2 " cols="5 " placeholder="Detalle.... " id="floatingInputNombre1 "></textarea>
+
+            </div>
+
+        </div>
+
+        <div class="divInferior m-4 ">
+
+            <div class="row justify-content-center ml-1 mr-1 ">
+
+                <div class="col col-xl-2 col-lg-2 col-md-6 col-sm-12 col-xs-12 mb-2 ">
+                    <h5>
+                        <mdb-badge id="subTitulo1"> Prioridad <i class="fas fa-list-alt "></i></mdb-badge>
+                    </h5>
+                    <select formControlName="prioridad" class="form-control" id="floatingInputNombre1 ">
+                <!-- <option>Elegir..</option> -->
+                <option *ngFor="let prio of prioridades" value="{{prio.pri_id}}">{{prio.nombre |titlecase}} </option>
+            </select>
+                </div>
+                <div class="col col-xl-3 col-lg-4 col-md-6 col-sm-12 col-xs-12 mb-2 ">
+                    <h5>
+                        <mdb-badge id="subTitulo1"> Técnico <i class="fas fa-tools "></i></mdb-badge>
+                    </h5>
+                    <select formControlName="tecnico" class="form-control " id="floatingInputNombre1 ">
+                    <!-- <option>Elegir..</option> -->
+                    <option *ngFor="let tec of tecnicos" value="{{tec.PersonaComercio_cedulaRuc}}">{{tec.nombres |titlecase}} {{tec.apellidos |titlecase}} </option>
+          
+            </select>
+                </div>
+                <div class="col col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 mb-2 ">
+                    <h5>
+                        <mdb-badge id="subTitulo1"> Servicios: <i class="far fa-calendar "></i></mdb-badge>
+                    </h5>
+                    <select formControlName="servicio" class="form-control " id="floatingInputNombre1 ">
+                <!-- <option>Elegir..</option> -->
+                <option *ngFor="let ser of servicios" value="{{ser.id}}"> {{ser.tipo|titlecase}} </option>
+           
+            </select>
+                </div>
+                <div class="col col-xl-3 col-lg-3 col-md-6 col-sm-12 col-xs-12 mb-2 ">
+                    <h5>
+                        <mdb-badge id="subTitulo1"> Estado: <i class="fas fa-flag"></i></mdb-badge>
+                    </h5>
+                    <select formControlName="estado" class="form-control" id="floatingInputNombre1">
+                        <!-- <option>Elegir..</option> -->
+                
+                <option *ngFor="let est of estados" value="{{est.id}}"> {{est.estado|titlecase}} </option>
+           
+                </select>
+                </div>
+
+            </div>
+            <!-- <i class="fa fa-image "></i> Atrás<input type="file " name="image "> -->
+        </div>
+
+        <div>
+            <div class=" mb-3" id="subirFotos ">
+
+                <h5>
+                    <mdb-badge id="subTitulo1"> Evidencias estéticas <i class="fas fa-eye "></i></mdb-badge>
+                </h5>
+                <div class=" divSelect ">
+
+                    <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-4 ">
+                        <label class="btn btn-ligth " id="evidencia1">
+                        <i class="fa fa-image "></i> Frente<input  formControlName="evidencia1" type="file" value="evidencia1"  style="display: none;"  name="evidencia1" id="evidencia1">
+                    </label>
+                        <!-- </div> -->
+                        <!-- <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-4 "> -->
+                        <label class="btn btn-ligth " id="evidencia2">
+                        <i class="fa fa-image "></i> Atrás<input formControlName="evidencia2" type="file" value="evidencia2"  style="display: none;"  name="evidencia2"  id="evidencia2">
+                    </label>
+                        <!-- </div> -->
+                        <!-- </div>
+            <div class="row divSelect "> -->
+                        <!-- <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-4 "> -->
+                        <label class="btn btn-ligth " id="evidencia3">
+                        <i class="fa fa-image "></i> Izquierda<input formControlName="evidencia3" value="evidencia3" type="file" style="display: none;" name="evidencia3" id="evidencia3">
+                    </label>
+                        <!-- </div> -->
+                        <!-- <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-12 col-xs-4 "> -->
+
+                        <label class="btn btn-ligth " id="evidencia4">
+                       <i class="fa fa-image "></i> Derecha<input type="file" formControlName="evidencia4"   value="evidencia4" style="display: none;"  name="evidencia4" id="evidencia4"> 
+
+                        <!-- <input type="file" class="" formControlName="evidencia4">
+
+                         <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"> -->
+                    </label>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="divGO ">
+            <button class="btn bts " type="submit" style="background-color: black; opacity: 0.40; color: white; " formenctype="multipart/form-data"><i class="fas fa-save "> </i>
+            Grabar Orden
+        </button>
+            <!-- <button class="btn bts " type="button" style="background-color: black; opacity: 0.40; color: white; " (click)="authGoogle()" id="authorize_button"><i class="fas fa-save "> </i>
+          loguear
+        </button> -->
+
+        </div>
+        <!-- <br> -->
+        <!-- <br> -->
+        <hr>
+    </form>
+    <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script>
+
+
+    <div class="col mr-4 cajaBotones ">
+        <div class=" row mr-4 ">
+
+            <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+                <!-- <div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12 "> -->
+                <button type="button " class="btn btn-success btO " id="btnW "><i class="fab fa-whatsapp "></i>         
+                <a href="https://api.whatsapp.com/send?phone=593968584986&text=Buen%20día%20estimado%20usuario%20del%20Taller%20xxxxxxxx%20le%20hacemos%20llegar%20la%20orden%20de%20ingreso%20de%20su%20vehículo " target="blank " style="color: white; "> WhatsApp</a></button>
+
+                <!-- </div> -->
+                <!-- <div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12 "> -->
+                <button type="button " class="btn btn-warning btO " style="opacity: 0.80; " onClick="printJS({ printable: 'htmlData', type: 'html', targetStyles: [ '*']}) "> <i class="fas fa-print "></i> Imprimir</button>
+                <!-- </div> -->
+                <!-- <div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12 "> -->
+                <button type="button " class="btn btO " style="background-color: #03A9F4; color: white; " data-toggle="modal " data-target=".bd-example-modal-xl "><i class="fas fa-reply "></i> Reenviar</button>
+                <!-- </div> -->
+                <!-- <div class="col col-lg-3 col-md-3 col-sm-12 col-xs-12 "> -->
+                <button type="button " class="btn btn-danger btO "> <i class="fas fa-times "></i> Anular</button>
+                <!-- </div> -->
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
+    </script> -->
+
+
+</div>
+
+
+
+
+<!-- modal reporte orden nueva -->
+
+
+
+<div class="modal fade bd-example-modal-xl " tabindex="-1 " role="dialog " aria-labelledby="myLargeModalLabel " aria-hidden="true ">
+    <div class="modal-dialog modal-xl ">
+        <div class="modal-content modal-xl ">
+
+
+
+
+
+            <td class="esd-block-image es-p20b " style="font-size: 0px; ">
+                <a target="_blank "><img src="https://ttczxo.stripocdn.email/content/guids/CABINET_887f48b6a2f22ad4fb67bc2a58c0956b/images/93351617889024778.png " alt="Logo " style="display: block; font-size: 12px; " title="Logo " width="200 "></a>
+            </td>
+
+
+            <table width="100% " cellspacing="0 " cellpadding="0 ">
+                <tbody>
+
+
+
+                    <tr>
+                        <td class="esd-container-frame " style=" width: 560; align-items: center; ">
+                            <table width="100% " cellspacing="0 " cellpadding="0 ">
+                                <tbody>
+                                    <!-- <tr>
+                                        <td class="esd-block-text es-p5t es-p10b es-m-txt-l mb-2 " style="text-align:center; ">
+                                            <h3 style="color: #121e9e; ">ORDEN DE INGRESO</h3>
+                                        </td>
+                                    </tr> -->
+                                    <br>
+                                    <tr id="htmlData ">
+
+
+                                        <td class="esd-block-text es-p5t es-p10b " style="text-align: left; ">
+
+                                            <h3 style="color: #121e9e; text-align: center; margin-top: 1em; margin-bottom: 1em; " id="tituloPrint ">ORDEN DE INGRESO</h3>
+
+
+                                            <div class="row divSelect " id="cardPrint ">
+                                                <div class="col col-xl-6 col-lg-6 col-md-6 ">
+                                                    <div class="card border-primary mb-3 ">
+                                                        <div class="card-header text-center font-weight-bold ">Datos del Usuario</div>
+                                                        <div class="card-body text-primary ">
+                                                            <h5 class="card-title ">Información</h5>
+                                                        </div>
+                                                        <ul>
+                                                            <li><strong>Nombre: </strong> Richard Daniel Chimbo Torres</li>
+                                                            <li><strong>Dirección: </strong> Cdla. Esteban Godoy 2da Etapa 26-74 </li>
+                                                            <li><strong>Teléfono: </strong> 0998715390</li>
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="col col-xl-6 col-lg-6 col-md-6 ">
+                                                    <div class="card border-primary mb-3 ">
+                                                        <div class="card-header text-center font-weight-bold ">Datos del Vehículo</div>
+                                                        <div class="card-body text-primary ">
+                                                            <h5 class="card-title ">Información</h5>
+
+                                                        </div>
+                                                        <ul>
+                                                            <div class="row ">
+
+                                                                <div class="col ">
+                                                                    <li><strong>Placa: </strong> LCH423 </li>
+                                                                    <li><strong>Marca: </strong> Chevrolet </li>
+                                                                    <li><strong>Modelo: </strong> Camaro</li>
+                                                                    <li><strong>Modelo: </strong> Camaro</li>
+                                                                </div>
+                                                                <div class="col ">
+                                                                    <li><strong>Placa: </strong> LCH423 </li>
+                                                                    <li><strong>Marca: </strong> Chevrolet </li>
+                                                                    <li><strong>Modelo: </strong> Camaro</li>
+                                                                    <li><strong>Modelo: </strong> Camaro</li>
+                                                                </div>
+
+                                                            </div>
+
+
+
+                                                        </ul>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <br>
+
+                                            <!-- <div class=" " style="margin-left: 7em; "> -->
+                                            <div class=" ">
+
+                                                <h4 style="text-align: center; color: #1c29c2; "> Detalle de la orden de ingreso: </h4>
+
+                                                <h5 style="text-align: left; font-weight: bold; margin-left: 2em; ">Observaciones</h5>
+                                                <div class="col ">
+
+                                                    <div class=" mb-3 " id="divObservacion ">
+
+                                                        <p id="parrafoImpresion " style=" margin-left: 0.8em; margin-right: 0.8em; text-align: justify; font-size: 1.2em; ">
+
+                                                            El patio era de tierra, cerrado al oeste por un cerco de ladrillos. El banco quedaba paralelo a él, a cinco metros, y allí se mantenían inmóviles, fijos los ojos en los ladrillos. Como el sol se ocultaba tras el cerco, al declinar los idiotas tenían fiesta.
+                                                            La luz enceguecedora llamaba su atención al principio, poco a poco sus ojos se animaban; se reían al fin estrepitosamente, congestionados por la misma hilaridad ansiosa, mirando el sol con alegría
+                                                            bestial.
+                                                        </p>
+
+                                                    </div>
+                                                </div>
+
+                                                <div id="idDetalles ">
+
+                                                    <h5 style="text-align: left; font-weight: bold; ">Prioridad</h5>
+
+
+                                                    <p>Recomendado</p>
+
+                                                    <h5 style="text-align: left; font-weight: bold; ">Técnico</h5>
+
+
+                                                    <p>Tcnl. Luis Andrango</p>
+
+                                                    <h5 style="text-align: left; font-weight: bold; ">Servicios</h5>
+
+
+                                                    <p>Mantenimiento correctivo</p>
+
+                                                    <h5 style="text-align: left; font-weight: bold; ">Fecha y hora de ingreso:</h5>
+
+
+                                                    <p>Lunes 24 de Agosto de 2021, 14:43</p>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                    </tr>
+                                    <hr>
+
+                                    <div class="divSelect mb-3 ">
+                                        <button type="button " class="btn btO " data-dismiss="modal " style="background-color: #00B0FF; color: white; "><i class="fas fa-arrow-circle-left "></i> SALIR </button>
+                                        <button class="btn btO1 " (click)="openPDF() " style="background-color: #0091EA;color: white; "><i class="fas fa-download "></i> Descargar PDF</button>
+                                        <button type="button " class="btn btO " style="background-color: #40C4FF;color: white; "><i class="fas fa-paper-plane "></i> Enviar </button>
+
+                                        <!-- <button type="button " class="btn btn-warning btO " (click)="printTest() "> <i class="fas fa-print "></i> Imprimir</button> -->
+                                        <!-- <button type="button " class="btn btn-warning btO " onClick="printJS({ printable: 'htmlData', type: 'html', targetStyles: [ '*']}) "> <i class="fas fa-print "></i> Imprimir</button> -->
+
+                                    </div>
+
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <!-- ============== -->
+
+                </tbody>
+            </table>
+
+
+
+        </div>
+    </div>
+</div>

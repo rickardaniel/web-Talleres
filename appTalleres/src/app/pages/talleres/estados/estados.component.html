@@ -1,0 +1,219 @@
+<app-nav-bar></app-nav-bar>
+<app-side-bar></app-side-bar>
+
+
+<div class="main-panel">
+    <button class="btn" id="boton-sidebar_left" style="float: right; margin-right: 1em;"><i class="fas fa-angle-double-left" ></i></button>
+    <div class="content" id="main">
+
+
+        <p class="p1">Administración Estados</p>
+
+        <!-- <div class="subcabecera "> -->
+
+        <button type="button" class="btn ml-4 mb-3 db botonCrear" data-toggle="modal" data-target="#modalCrear"><i class="fas fa-plus"></i>
+                    Crear Estado
+        </button>
+
+        <div class="divSelect mb-3" id="buscar">
+            <fieldset><input type="search" id="btnSearch" [(ngModel)]="searchText" /><button id="bSearch" type="submit"><i class="fa fa-search" id="idSearch"></i></button></fieldset>
+        </div>
+
+        <div class="table-responsive">
+
+            <table mdbTable #tableEl="mdbTable" class="tt table">
+                <thead class="thead">
+                    <tr>
+                        <th scope="col"><i class="fas fa-signature"></i> Nombre</th>
+                        <th scope="col"><i class="fas fa-book-open"></i> Detalle </th>
+                        <!-- <th scope="col"><i class="fas fa-hashtag"></i> Orden</th> -->
+                        <th scope="col"><i class="fas fa-tools"></i> Acciones</th>
+
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+
+                    <tr mdbTableCol *ngFor="let el of elements; let i =index">
+                        <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row">{{el.estado| titlecase}}</th>
+                        <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">Descripción estándar</td>
+                        <!-- <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.orden}}</td> -->
+
+                        <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+                            <div class="button-group">
+
+                                <button *ngIf="el.deleted== '1'" hidden type="button" class="btn  btn-sm bEditar" data-toggle="modal" data-target="#modalEditar" (click)="obtenerPorID(el.id)"><i class="fas fa-pencil-alt"></i> Editar</button>
+                                <button *ngIf="el.deleted == '0'" type="button" class="btn  btn-sm bEditar" data-toggle="modal" data-target="#modalEditar" (click)="obtenerPorID(el.id)"><i class="fas fa-pencil-alt"></i> Editar</button>
+                                <button *ngIf="el.deleted == '1'" style="width: 12.5em;" type="button" class="btn  btn-sm bEliminar" data-toggle="modal" data-target="#modalHabilitar" (click)="enviar(el)"><i class="fas fa-ban "></i> Habilitar</button>
+                                <button *ngIf="el.deleted == '0'" type="button" class="btn  btn-sm bEliminar" data-toggle="modal" data-target="#modalDeshabilitar" (click)="enviar(el)"><i class="fas fa-ban "></i> Deshalibitar</button>
+
+
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+                <td class="" colspan="11">
+                    <mdb-table-pagination class="" [tableEl]="tableEl" [searchDataSource]="elements"></mdb-table-pagination>
+                </td>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL CREAR ATRIBUTO-->
+
+
+<div class="modal fade" id="modalCrear" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header mh">
+                <h5 class="modal-title w-100 text-center " id="exampleModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          
+          </button>
+            </div>
+            <div class="modal-body">
+
+
+                <div class="form-header">
+                    <h1 class="" id="tituloForm">Crear Estado</h1>
+                </div>
+                <form class="login100-form validate-form flex-sb flex-w animated" style="color: #757575;" [formGroup]="formCrear" (ngSubmit)="crear(formCrear.value)">
+                    <div class="m-4">
+
+                        <!-- INGRESAR NOMBRE DE USUARIO -->
+
+                        <div class="form-group">
+                            <label for="username" id="tituloF">Nombre <i class="fas fa-signature"></i></label>
+                            <input [class.is-invalid]="formCrear.get('nombre')?.touched && formCrear.get('nombre')?.invalid" formControlName="nombre" id="username" type="text" name="username" class="form-control form-icon-trailing entrada1" id="floatingInputNombre" required="required"
+                            />
+                            <span *ngIf="f.nombre.invalid && (f.nombre.dirty || f.nombre.touched)" class="text-danger animated fadeIn" style="text-align: center;"> Debe ingresar un nombre</span>
+
+                        </div>
+
+                        <!-- INGRESAR DETALLE -->
+                        <div class="form-group">
+                            <label for="password" id="tituloF">Descripción <i class="fas fa-columns" ></i></label>
+                            <textarea [class.is-invalid]="formCrear.get('detalle')?.touched && formCrear.get('detalle')?.invalid" formControlName="detalle" type="text" name='detalle' class="form-control form-icon-trailing" id="tA"></textarea>
+                            <span *ngIf="f.detalle.invalid && (f.detalle.dirty || f.detalle.touched)" class="text-danger animated fadeIn"> Debe ingresar el detalle</span>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class=" button group row m-3 ">
+
+                        <button type="button" class="btn col btn-md btnModal " aria-label="Close" data-dismiss="modal" (click)="resetear()"><i class="fas fa-window-close"></i> Cancelar</button>
+                        <button type="submit" class="btn col btn-md btnGuardar " [disabled]="formCrear.invalid"><i class="fas fa-save"></i> crear estado</button>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL EDITAR ATRIBUTO-->
+
+
+<div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header mh">
+
+            </div>
+            <div class="modal-body">
+
+                <div class="form-header">
+                    <h1 class="" id="tituloForm">Editar Estado</h1>
+                </div>
+
+                <form class="login100-form validate-form flex-sb flex-w animated text-center" style="color: #757575;" [formGroup]="formEditar" (ngSubmit)="editar(formEditar.value, elements1.est_orden_abierta_id)">
+
+                    <div class="m-4">
+
+                        <!-- INGRESAR NOMBRE DE USUARIO -->
+
+                        <div class="form-group">
+                            <label for="username" id="tituloF">Nombre <i class="fas fa-signature"></i></label>
+                            <input [class.is-invalid]="formCrear.get('nombre')?.touched && formCrear.get('nombre')?.invalid" formControlName="nombre" id="username" type="text" name="username" class="form-control form-icon-trailing entrada1" id="floatingInputNombre" required="required"
+                            />
+                            <span *ngIf="f.nombre.invalid && (f.nombre.dirty || f.nombre.touched)" class="text-danger animated fadeIn" style="text-align: center;"> Debe ingresar un nombre</span>
+
+                        </div>
+
+                        <!-- INGRESAR DETALLE -->
+                        <div class="form-group">
+                            <label for="password" id="tituloF">Descripción <i class="fas fa-columns" ></i></label>
+                            <textarea [class.is-invalid]="formCrear.get('detalle')?.touched && formCrear.get('detalle')?.invalid" formControlName="detalle" type="text" name='detalle' class="form-control form-icon-trailing" id="tA"></textarea>
+                            <span *ngIf="f.detalle.invalid && (f.detalle.dirty || f.detalle.touched)" class="text-danger animated fadeIn"> Debe ingresar el detalle</span>
+                        </div>
+                    </div>
+
+
+                    <hr>
+                    <div class=" button group row m-3 ">
+
+                        <button type="button" class="btn col btn-md btnModal " aria-label="Close" data-dismiss="modal" (click)="resetear()"><i class="fas fa-window-close"></i> Cancelar</button>
+                        <button type="submit" class="btn col btn-md btnGuardar " [disabled]="formEditar.invalid"><i class="fas fa-save "></i>  Guardar cambios</button>
+
+                    </div>
+
+                </form>
+                <!-- Form -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL INHABILITAR -->
+
+<div class="modal fade" id="modalDeshabilitar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header mh">
+
+            </div>
+            <div class="modal-body  mr-3 ml-3">
+
+                <div class="form-header">
+                    <h1 class="" id="tituloForm">Deshabilitar Estado</h1>
+                </div>
+
+                <p class="titulo-eliminar"> ¿Está seguro de deshabilitar el estado: {{elements1.nombre | uppercase}} ?</p>
+            </div>
+
+            <div class=" button group row m-4 ">
+
+                <button type="button" class="btn col btn-md btnModal " aria-label="Close" data-dismiss="modal"><i class="fas fa-window-close"></i> Cancelar</button>
+                <button type="button" class="btn col btn-md btnGuardar " aria-label="Close" data-dismiss="modal" (click)="deshabilitar(elements1.est_orden_abierta_id)"><i class="fas fa-ban"></i> Sí, deshabilitar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL HABILITAR  -->
+
+<div class="modal fade" id="modalHabilitar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header mh">
+
+            </div>
+            <div class="modal-body  mr-3 ml-3">
+
+                <div class="form-header">
+                    <h1 class="" id="tituloForm">Habilitar Estado</h1>
+                </div>
+
+                <p class="titulo-eliminar"> ¿Está seguro de habilitar el estado: {{elements1.nombre | uppercase}} ?</p>
+            </div>
+
+            <div class=" button group row m-4 ">
+
+                <button type="button" class="btn col btn-md btnModal " aria-label="Close" data-dismiss="modal"><i class="fas fa-window-close"></i> Cancelar</button>
+                <button type="button" class="btn col btn-md btnGuardar" aria-label="Close" data-dismiss="modal" (click)="habilitar(elements1.est_orden_abierta_id)"><i class="fas fa-check"></i> Sí, habilitar</button>
+            </div>
+        </div>
+    </div>
+</div>

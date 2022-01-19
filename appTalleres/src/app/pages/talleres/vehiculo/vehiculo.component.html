@@ -1,0 +1,308 @@
+<app-nav-bar></app-nav-bar>
+<app-side-bar></app-side-bar>
+
+
+<div class="main-panel">
+    <button class="btn" id="boton-sidebar_left" style="float: right; margin-right: 1em;"><i class="fas fa-angle-double-left" ></i></button>
+    <div class="content" id="main">
+
+
+        <p class="p1">Administración Vehículos</p>
+
+        <!-- <div class="subcabecera "> -->
+
+        <button type="button" class="btn ml-4 mb-3 db botonCrear" data-toggle="modal" data-target="#modalCrear" (click)="enviarAtributo()"><i class="fas fa-plus" ></i>
+                    Crear Vehículo
+        </button>
+
+        <div class="divSelect mb-3" id="buscar">
+
+
+            <fieldset><input type="search" id="btnSearch" [(ngModel)]="searchText" /><button id="bSearch" type="submit"><i class="fa fa-search"id="idSearch"></i></button></fieldset>
+
+
+        </div>
+
+        <div class="table-responsive">
+
+            <table mdbTable #tableEl="mdbTable" class="tt table">
+
+
+
+
+
+
+                <thead class="thead">
+
+                    <tr>
+                        <th scope="col"><i class="fas fa-user"></i> Cliente</th>
+                        <th scope="col"><i class="fas fa-address-card"></i> Placa </th>
+                        <!-- <th scope="col"><i class="fas fa-book-open"></i> Atributos</th> -->
+                        <!-- <th scope="col"><i class="fas fa-book-open"></i> Atributos</th> -->
+                        <!-- <th scope="col"><i class="fas fa-hashtag"></i> Orden</th> -->
+                        <th scope="col"><i class="fas fa-tools"></i> Acciones</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody class="tbody">
+                    <!-- <ng-container *ngFor="let el of elements; let i =index "> -->
+
+                    <tr mdbTableCol *ngFor="let el of elements; let i =index">
+                        <th *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex" scope="row">{{el.nombre | titlecase}}</th>
+                        <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.detalle}}</td>
+
+
+                        <!-- <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{atributos.nombre}}</td> -->
+
+
+
+                        <!-- <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">{{el.orden}}</td> -->
+
+                        <td *ngIf="i+1 >= mdbTablePagination.firstItemIndex && i < mdbTablePagination.lastItemIndex">
+                            <div class="button-group">
+
+                                <button *ngIf="el.estado == '0'" hidden type="button" class="btn  btn-sm bEditar" data-toggle="modal" data-target="#modalEditar" (click)="obtenerPorID(el.est_orden_abierta_id)"><i class="fas fa-pencil-alt"></i> Editar</button>
+                                <button *ngIf="el.estado  == '1'" type="button" class="btn  btn-sm bEditar" data-toggle="modal" data-target="#modalEditar" (click)="obtenerPorID(el.est_orden_abierta_id)"><i class="fas fa-pencil-alt"></i> Editar</button>
+                                <button *ngIf="el.estado  == '0'" style="width: 12.5em;" type="button" class="btn  btn-sm bEliminar" data-toggle="modal" data-target="#modalHabilitar" (click)="enviar(el)"><i class="fas fa-ban "></i> Habilitar</button>
+                                <button *ngIf="el.estado  == '1'" type="button" class="btn  btn-sm bEliminar" data-toggle="modal" data-target="#modalDeshabilitar" (click)="enviar(el)"><i class="fas fa-ban "></i> Deshalibitar</button>
+
+
+                            </div>
+                        </td>
+                    </tr>
+
+
+                    <!-- </ng-container> -->
+                </tbody>
+                <td class="" colspan="11">
+                    <mdb-table-pagination class="" [tableEl]="tableEl" [searchDataSource]="elements"></mdb-table-pagination>
+                </td>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<!-- MODAL CREAR Vehículo-->
+
+
+<div class="modal fade" id="modalCrear" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header mh">
+                <h5 class="modal-title w-100 text-center " id="exampleModalLabel">Crear Vehículo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          
+          </button>
+            </div>
+            <div class="modal-body">
+
+                <form class="login100-form validate-form flex-sb flex-w animated text-center" style="color: #757575;" [formGroup]="formCrear" (ngSubmit)="crear(formCrear.value)">
+
+
+                    <div class="m-4">
+
+                        <!-- INGRESAR NOMBRE DE USUARIO -->
+
+                        <span *ngIf="f.nombre.invalid && (f.nombre.dirty || f.nombre.touched)" class="text-danger animated fadeIn"> Debe ingresar un nombre</span>
+
+                        <div class="form-floating mb-2">
+
+                            <input [class.is-invalid]="formCrear.get('nombre')?.touched && formCrear.get('nombre')?.invalid" formControlName="nombre" type="text" name='nombre' class="form-control form-icon-trailing entrada1" id="floatingInputNombre" placeholder="Nombre">
+
+                            <label for="floatingInput" class="form-label"><i class="fas fa-user"></i> Cliente</label>
+
+                        </div>
+                        <!-- INGRESAR PLACA -->
+                        <span *ngIf="f.nombre.invalid && (f.nombre.dirty || f.nombre.touched)" class="text-danger animated fadeIn"> Debe ingresar una placa</span>
+
+                        <div class="form-floating mb-2">
+
+                            <input [class.is-invalid]="formCrear.get('nombre')?.touched && formCrear.get('nombre')?.invalid" formControlName="nombre" type="text" name='nombre' class="form-control form-icon-trailing entrada1" id="floatingInputNombre" placeholder="Nombre">
+
+                            <label for="floatingInput" class="form-label"><i class="fas fa-address-card"></i> Placa</label>
+
+                        </div>
+                        <!-- INGRESAR ATRIBUTO -->
+
+                        <ng-container *ngFor="let atri of atributos">
+
+
+
+                            <span *ngIf="f.nombre.invalid && (f.nombre.dirty || f.nombre.touched)" class="text-danger animated fadeIn"> Debe ingresar una placa</span>
+
+                            <div class="form-floating mb-2">
+
+                                <input [class.is-invalid]="formCrear.get('nombre')?.touched && formCrear.get('nombre')?.invalid" formControlName="nombre" type="text" name='nombre' class="form-control form-icon-trailing entrada1" id="floatingInputNombre" placeholder="Nombre">
+
+                                <label for="floatingInput" class="form-label"><i class="fas fa-address-card"></i> {{atri.nombre}}</label>
+
+                            </div>
+
+                        </ng-container>
+                        <!-- INGRESAR DETALLE -->
+                        <!-- 
+                        <span *ngIf="f.detalle.invalid && (f.detalle.dirty || f.detalle.touched)" class="text-danger animated fadeIn"> Debe ingresar el detalle</span>
+
+                        <div class="mb-2">
+
+                            <div class="form-floating ">
+
+                                <textarea [class.is-invalid]="formCrear.get('detalle')?.touched && formCrear.get('detalle')?.invalid" formControlName="detalle" type="text" name='detalle' class="form-control form-icon-trailing" id="tA" placeholder="Detalle"></textarea>
+
+                                <label for="floatingInput" class="form-label"><i class="fas fa-columns" ></i> Descripcion</label>
+
+                            </div>
+                        </div> -->
+
+                        <!-- INGRESAR ORDEN -->
+
+                        <!-- <span *ngIf="f.orden.invalid && (f.orden.dirty || f.orden.touched)" class="text-danger animated fadeIn"> Debe ingresar un orden </span>
+
+                        <div class="form-floating mb-1">
+
+                            <input [class.is-invalid]="formCrear.get('orden')?.touched && formCrear.get('orden')?.invalid" formControlName="orden" type="text" name='orden' class="form-control form-icon-trailing entrada1" id="floatingInputNombre" placeholder="Orden">
+
+                            <label for="floatingInput" class="form-label"><i class="fas fa-hashtag"></i> Orden</label>
+
+                        </div> -->
+
+                    </div>
+                    <hr>
+                    <div class=" button group row m-3 ">
+
+                        <button type="button" class="btn col btn-md btnModal " aria-label="Close" data-dismiss="modal" (click)="resetear()"><i class="fas fa-window-close"></i> Cancelar</button>
+                        <button type="submit" class="btn col btn-md btnGuardar " [disabled]="formCrear.invalid"><i class="fas fa-save"></i> crear Vehículo</button>
+
+                    </div>
+
+                </form>
+                <!-- Form -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL EDITAR Vehículo-->
+
+
+<div class="modal fade" id="modalEditar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header mh">
+                <h5 class="modal-title w-100 text-center " id="exampleModalLabel">Editar Vehículo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          
+          </button>
+            </div>
+            <div class="modal-body">
+
+                <form class="login100-form validate-form flex-sb flex-w animated text-center" style="color: #757575;" [formGroup]="formEditar" (ngSubmit)="editar(formEditar.value, elements1.est_orden_abierta_id)">
+
+
+                    <div class="m-4">
+
+                        <!-- INGRESAR NOMBRE DE USUARIO -->
+
+                        <span *ngIf="f.nombre.invalid && (f.nombre.dirty || f.nombre.touched)" class="text-danger animated fadeIn"> Debe ingresar un nombre</span>
+
+                        <div class="form-floating mb-2">
+
+                            <input [class.is-invalid]="formEditar.get('nombre')?.touched && formEditar.get('nombre')?.invalid" formControlName="nombre" type="text" name='nombre' class="form-control form-icon-trailing entrada1" id="floatingInputNombre" placeholder="Nombre">
+
+                            <label for="floatingInput" class="form-label"><i class="fas fa-signature"></i> Nombre</label>
+
+                        </div>
+                        <!-- INGRESAR DETALLE -->
+
+                        <span *ngIf="f.detalle.invalid && (f.detalle.dirty || f.detalle.touched)" class="text-danger animated fadeIn"> Debe ingresar el detalle</span>
+
+                        <div class="mb-2">
+
+                            <div class="form-floating ">
+
+                                <textarea [class.is-invalid]="formEditar.get('detalle')?.touched && formEditar.get('detalle')?.invalid" formControlName="detalle" type="text" name='detalle' class="form-control form-icon-trailing" id="tA" placeholder="Detalle"></textarea>
+
+                                <label for="floatingInput" class="form-label"><i class="fas fa-columns" ></i> Descripcion</label>
+
+                            </div>
+                        </div>
+
+                        <!-- INGRESAR ORDEN -->
+
+                        <!-- <span *ngIf="f.orden.invalid && (f.orden.dirty || f.orden.touched)" class="text-danger animated fadeIn"> Debe ingresar un orden </span>
+
+                        <div class="form-floating mb-1">
+
+                            <input [class.is-invalid]="formEditar.get('orden')?.touched && formEditar.get('orden')?.invalid" formControlName="orden" type="text" name='orden' class="form-control form-icon-trailing entrada1" id="floatingInputNombre" placeholder="Orden">
+
+                            <label for="floatingInput" class="form-label"><i class="fas fa-hashtag"></i> Orden</label>
+
+                        </div> -->
+
+                    </div>
+                    <hr>
+                    <div class=" button group row m-3 ">
+
+                        <button type="button" class="btn col btn-md btnModal " aria-label="Close" data-dismiss="modal" (click)="resetear()"><i class="fas fa-window-close"></i> Cancelar</button>
+                        <button type="submit" class="btn col btn-md btnGuardar " [disabled]="formEditar.invalid"><i class="fas fa-save "></i>  Guardar cambios</button>
+
+                    </div>
+
+                </form>
+                <!-- Form -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL INHABILITAR -->
+
+<div class="modal fade" id="modalDeshabilitar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header mh">
+                <h5 class="modal-title w-100 text-center " id="exampleModalLabel">Inhabilitar Prioridad</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          
+          </button>
+            </div>
+            <div class="modal-body  mr-3 ml-3">
+
+                <p class="titulo-eliminar"> ¿Está seguro de deshabilitar la prioridad: {{elements1.nombre | uppercase}} ?</p>
+            </div>
+
+            <div class=" button group row m-4 ">
+
+                <button type="button" class="btn col btn-md btnModal " aria-label="Close" data-dismiss="modal"><i class="fas fa-window-close"></i> Cancelar</button>
+                <button type="button" class="btn col btn-md btnGuardar " aria-label="Close" data-dismiss="modal" (click)="deshabilitar(elements1.est_orden_abierta_id)"><i class="fas fa-ban"></i> Sí, deshabilitar</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL HABILITAR  -->
+
+<div class="modal fade" id="modalHabilitar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header mh">
+                <h5 class="modal-title w-100 text-center " id="exampleModalLabel">Habilitar Prioridad</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          
+          </button>
+            </div>
+            <div class="modal-body  mr-3 ml-3">
+
+                <p class="titulo-eliminar"> ¿Está seguro de habilitar la prioridad: {{elements1.nombre | uppercase}} ?</p>
+            </div>
+
+            <div class=" button group row m-4 ">
+
+                <button type="button" class="btn col btn-md btnModal " aria-label="Close" data-dismiss="modal"><i class="fas fa-window-close"></i> Cancelar</button>
+                <button type="button" class="btn col btn-md btnGuardar" aria-label="Close" data-dismiss="modal" (click)="habilitar(elements1.est_orden_abierta_id)"><i class="fas fa-check"></i> Sí, habilitar</button>
+            </div>
+        </div>
+    </div>
+</div>/p>

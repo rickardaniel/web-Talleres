@@ -1,0 +1,134 @@
+<app-nav-bar></app-nav-bar>
+
+
+<div class="box m-1 ">
+
+    <div class="" style="width: 80%; margin-left: 11%; margin-right: 13%;">
+
+        <div class="col ">
+            <div class="row">
+                <ng-container class="items" *ngFor="let el of elements">
+
+                    <div *ngIf="el.estado =='1.INGRESO'" class="col col-xl-4">
+                        <div class="cards mt-3 ">
+                            <div class="card">
+                                <ul class=" list-group list-group-flush ">
+                                    <li class="list-group-item tituloCard " style="float: left;">Nro. {{el.secuencia}}
+                                        <i class="fas fa-ellipsis-v" type='button' style="float: right;" data-toggle="modal" data-target="#modalCambiarEstado"></i>
+                                    </li>
+                                    <li class="list-group-item contenidoCard" type="button" (click)="enviarDatos(el)">Placa: {{el.valor | uppercase}} </li>
+                                    <li class="list-group-item footerCard">Cliente: {{el.nombres |titlecase }} {{el.apellidos |titlecase }}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>
+<!-- ====================================================================================================================================================================== -->
+
+<!-- <div class="box m-1 ">
+    <div class=" divSelect" id="cardPlaneador">
+        <div class="items">
+            <ng-container *ngFor="let el of elements">
+                <div *ngIf="el.estado == '4.LISTO PARA ENTREGAR'">
+                    <div class="cards mt-3 ">
+
+                        <div class="card ">
+                            <ul class=" list-group list-group-flush ">
+                                <li class="list-group-item tituloCard " style="float: left;">Nro. {{el.secuencia}}
+                                    <i class="fas fa-ellipsis-v" type='button' style="float: right;" data-toggle="modal" data-target="#modalCambiarEstado"></i>
+                                </li>
+                                <li class="list-group-item contenidoCard" type="button" (click)="enviarDatos(el)">Placa: {{el.valor| uppercase}} </li>
+                                <li class="list-group-item footerCard">Cliente: {{el.nombres |titlecase }} {{el.apellidos |titlecase }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+            </ng-container>
+        </div>
+    </div>
+
+    <div class=" divSelect" id="cardPlaneador">
+        <div class="items">
+            <ng-container *ngFor="let el of elements">
+                <div *ngIf="el.estado =='1.INGRESO'">
+                    <div class=" cards mt-3">
+
+
+                        <div class="card ">
+                            <ul class=" list-group list-group-flush ">
+
+                                <li class="list-group-item tituloCard1 " style="float: left;">Nro. {{el.secuencia}}<i class="fas fa-ellipsis-v" type='button' style="float: right;" data-toggle="modal" data-target="#modalCambiarEstado"></i>
+
+                                </li>
+                                <li class="list-group-item contenidoCard1" type="button" (click)="enviarDatos(el)">Placa:{{el.valor| uppercase}} </li>
+                                <li class="list-group-item footerCard1">Cliente: {{el.nombres |titlecase }} {{el.apellidos |titlecase }}</li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    <div class=" divSelect" id="cardPlaneador">
+        <div class="items">
+            <ng-container *ngFor="let el of elements">
+                <div *ngIf="el.estado == '2. EN PROCESO'">
+                    <div class=" cards mt-3 mb-3">
+                        <div class="card ">
+                            <ul class=" list-group list-group-flush ">
+
+                                <li class="list-group-item tituloCard2 " style="float: left;">Nro. {{el.secuencia}}<i class="fas fa-ellipsis-v" type='button' style="float: right;" data-toggle="modal" data-target="#modalCambiarEstado"></i>
+
+                                </li>
+                                <li class="list-group-item contenidoCard2" type="button" (click)="enviarDatos(el)">Placa:{{el.valor| uppercase}}</li>
+                                <li class="list-group-item footerCard2">Cliente: {{el.nombres |titlecase }} {{el.apellidos |titlecase }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div> -->
+
+
+
+
+
+<app-planeador-detalle [elements2]="elements2"></app-planeador-detalle>
+
+<div class="modal fade" id="modalCambiarEstado" tabindex="-1" role="dialog" aria-labelledby="modalCambiarEstado" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel" style=" font-family: 'Roboto'; font-weight: bold;">Cambiar Estado</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body divSelect">
+
+                <select class="form-control" name="" id="">
+                    <option value="">Seleccionar...</option>
+                    <option value="">Activos</option>
+                    <option value="">Espera</option>
+                    <option value="">Entregado</option>
+                </select>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btO" data-dismiss="modal"> <i class="fas fa-save"></i> Guardar</button>
+                <button type="button" class="btn btn-primary btO" data-dismiss="modal"> <i class="fas fa-times"></i> Cancelar</button>
+            </div>
+        </div>
+    </div>

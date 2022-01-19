@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  CORS :'http://45.76.250.195:8090/',
+  accesoLogin:'https://sofpymes.com/comprobantes/common/movil/get_url?ruc=',
+  common :'common/movil/',
+  EPlogin: 'login_empleado?',
+  urlDemo: 'https://sofpymes.com/demotalleres/common/talleres/'
+  
+
+
 };
 
 
