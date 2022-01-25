@@ -1,0 +1,33 @@
+{
+    "data": [
+
+        {
+            "id": "001",
+            "placa": " LCK213",
+            "Kilómetros": "51000",
+            "Marca": "Toyota",
+            "Modelo": "Fortuner",
+            "Año": "2018",
+            "Combustible": "Gasolina"
+        },
+        {
+            "id": "002",
+            "placa": " LPJ421",
+            "Kilómetros": "11320",
+            "Marca": "Chevrolet",
+            "Modelo": "Camaro",
+            "Año": "2018",
+            "Combustible": "Gasolina"
+        },
+        {
+            "id": "003",
+            "placa": " LGF423",
+            "Kilómetros": "24578",
+            "Marca": "Mitsubishi",
+            "Modelo": "Lancer",
+            "Año": "2018",
+            "Combustible": "Gasolina"
+        }
+
+    ]
+}

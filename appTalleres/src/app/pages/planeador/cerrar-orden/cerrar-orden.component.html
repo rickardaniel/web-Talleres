@@ -1,0 +1,365 @@
+<div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content modal-xl">
+
+            <div class="modal-header">
+                <h5 class="modal-title" style=" font-family: 'Roboto'; font-weight: bold;">Cierre de Orden de trabajo</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+
+            <div class="modal-body">
+
+
+                <div class="table-responsive">
+                    <!-- <div class="row">
+                        <div class="col col-xl-12 col-lg-12 col-sm-12"> -->
+                    <table mdbTable #tableEl="mdbTable" class="tt4 table">
+                        <thead class="thead1">
+                            <tr>
+                                <th scope="col"><i class="fas fa-hashtag"></i> No.</th>
+                                <th scope="col"><i class="far fa-calendar-alt"></i> Fecha</th>
+                                <th scope="col"><i class="fas fa-user"></i> Cliente</th>
+                                <th scope="col"><i class="far fa-id-card"></i> Placa</th>
+                                <th scope="col"><i class="fas fa-car-side"></i> Marca</th>
+                                <th scope="col"><i class="fas fa-tachometer-alt"></i> Km</th>
+                                <th scope="col"><i class="fas fa-exclamation-triangle"></i> Problema</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+
+                            <tr mdbTableCol *ngFor="let el of elements3">
+                                <th scope="row">{{el.nOrden}}</th>
+                                <td>{{el.fecha}}</td>
+                                <td>{{el.cliente}}</td>
+                                <td>{{el.placa}}</td>
+                                <td>{{el.marca}}</td>
+                                <td>{{el.km}}</td>
+                                <td>{{el.problema}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+
+                <div class="row mt-3 mb-3">
+
+                    <div class="col col-lg-3 col-md-12 col-sm-12 col-xs-12 divSelect">
+
+                        <h6 class="titulosModal">Recomendaciones:</h6>
+
+                    </div>
+                    <div class="col col-lg-9 col-md-12 col-sm-12 col-xs-12">
+
+
+                        <textarea type="" class="form-control" name="" id="" rows="2" cols="5" placeholder="Detalle...."></textarea>
+                    </div>
+                </div>
+
+
+
+                <div class="row ">
+                    <div class="col col-lg-3 col-md-5 divSelect">
+                        <h6 class="titulosModal mt-1">
+                            <!-- <mdb-badge id="subTitulo1"> <i class="fas fa-list-alt"></i> Prox. Mantenimiento </mdb-badge> -->
+                            Prox. Mantenimiento
+                        </h6>
+                    </div>
+                    <div class="col col-lg-3 col-md-7 mb-1">
+                        <input type="number" class="form-control" placeholder="Km" min="0" oninput="this.value = 
+                            !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+                    </div>
+                    <div class="col col-lg-2 col-md-5 divSelect">
+                        <h6 class="titulosModal mt-1 ">
+                            <!-- <mdb-badge id="subTitulo1 "> <i class="fas fa-calendar-alt "></i> Fecha Prox. Mante </mdb-badge> -->
+                            Fecha Prox. Mante
+                        </h6>
+                    </div>
+                    <div class="col col-lg-4 col-md-7 ">
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row  mt-2 ">
+                    <div class="col col-lg-3 col-md-5 divSelect">
+                        <h6 class="titulosModal mt-3 ">
+                            <!-- <mdb-badge id="subTitulo1 "> <i class="fas fa-user "></i> Quién retira el vehículo </mdb-badge> -->
+                            Quién retira el vehículo
+                        </h6>
+
+                    </div>
+                    <div class="col col-lg-9 col-md-7 ">
+                        <input type="text " name=" " id=" " class="form-control ">
+                    </div>
+
+                </div>
+                <div class="row divSelect mt-2 ">
+
+
+                    <div class=" col col-lg-2 col-md-5 divSelect ">
+                        <h6 class="titulosModal ">
+
+                            Próximo Servicio:
+                        </h6>
+
+                    </div>
+                    <div class="col col-lg-3 col-md-7 ">
+                        <input type="text " name=" " id=" " class="form-control " placeholder="Cod o nombre de item ">
+                    </div>
+                    <div class="col col-lg-2 col-md-3">
+                        <input type="number" class="form-control " placeholder="Cant. " min="0 " oninput="this.value=! !this.value && Math.abs(this.value)>= 0 ? Math.abs(this.value) : null">
+                    </div>
+                    <div class="col col-lg-2 col-md-4 ">
+                        <!-- <small>Km</small> -->
+                        <input type="text" name="" id="" class="form-control" placeholder="Km">
+                    </div>
+                    <div class="col col-lg-2 col-md-4 ">
+                        <button type="button" class="btn btn-primary btO"><i class="fas fa-plus"></i> Agregar</button>
+                    </div>
+
+                </div>
+
+                <hr>
+
+                <div class="table-responsive">
+                    <!-- <div class="row">
+                        <div class="col col-xl-12 col-lg-12 col-sm-12"> -->
+                    <table mdbTable #tableEl="mdbTable" class="tt4 table">
+                        <thead class="thead">
+                            <tr>
+                                <th scope="col"><i class="fas fa-hashtag"></i> Cantidad</th>
+                                <th scope="col"><i class="fas fa-book-open"></i> Detalle</th>
+                                <th scope="col"><i class="fas fa-dollar-sign"></i> Valor</th>
+                                <th scope="col"><i class="fas fa-tachometer-alt"></i> Km</th>
+                                <th scope="col" class="text-center"><i class="fas fa-clock"></i> Prioridad Mantenimiento</th>
+
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+
+                            <tr mdbTableCol *ngFor="let el of elements3">
+                                <th scope="row">1</th>
+                                <td>Limpieza Inyectores</td>
+                                <td>20</td>
+                                <td>37500</td>
+
+                                <td>
+                                    <select class="form-control">
+                                            <option>Inmediata</option>
+                                            <option>Próximo mes</option>
+                                            <option>Puede esperar</option>
+                                        </select>
+
+                                </td>
+                                <!-- <td>{{el.marca}}</td>
+                                    <td>{{el.km}}</td>
+                                    <td>{{el.problema}}</td> -->
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
+
+
+
+            </div>
+            <div class="modal-footer divSelect">
+                <button type="button" class="btn btn-primary btO"><i class="fas fa-save"></i> Guardar</button>
+                <button class="btn btn-warning btO" onClick="printJS({ printable: 'htmlData', type: 'html', targetStyles: ['*']})"><i class="fas fa-print"></i> Imprimir</button>
+                <button class="btn btn-Success btO" id="segundoModal" (click)="abrirSM(elements3)"><i class="fas fa-reply-all"></i> Reenviar</button>
+                <button class="btn btn-success btO"> <i class="fab fa-whatsapp"></i> WhatsApp</button>
+                <button type="button" class="btn btn-secondary btO" data-dismiss="modal"> <i class="fas fa-times"></i> Cancelar</button>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- modal reporte orden nueva -->
+
+<div id="ModalAgregarNombre" class="modal fade" role="dialog">
+    <html>
+
+    <head>
+        <meta name="viewport" type="image/jpeg">
+    </head>
+
+
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content modal-xl">
+
+            <tr id="htmlData" *ngFor="let el of elements4">
+
+
+                <td class="esd-block-text es-p5t es-p10b" style="text-align: left;">
+
+                    <h3 style="color: #121e9e; text-align: center; margin-top: 0.5em; margin-bottom: 1em;" id="tituloPrint">ORDEN DE INGRESO NRO. {{el.nOrden}}</h3>
+
+
+                    <div class="row divSelect" id="cardPrint">
+                        <div class="col col-xl-6 col-lg-6 col-md-6">
+                            <div class="card border-primary mb-3">
+                                <div class="card-header text-center font-weight-bold">Datos del Usuario</div>
+                                <div class="card-body text-primary">
+                                    <h5 class="card-title">Información</h5>
+                                </div>
+                                <ul>
+
+                                    <li><strong>Nombre: </strong>{{el.cliente}}</li>
+
+
+
+                                    <li><strong>Dirección: </strong> Cdla. Esteban Godoy 2da Etapa 26-74 </li>
+                                    <li><strong>Teléfono: </strong> 0998715390</li>
+
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col col-xl-6 col-lg-6 col-md-6">
+                            <div class="card border-primary mb-3">
+                                <div class="card-header text-center font-weight-bold">Datos del Vehículo</div>
+                                <div class="card-body text-primary">
+                                    <h5 class="card-title">Información</h5>
+
+                                </div>
+                                <ul>
+                                    <div class="row">
+
+                                        <div class="col">
+                                            <li><strong>Placa: </strong>{{el.placa}} </li>
+                                            <li><strong>Marca: </strong> {{el.marca}}</li>
+                                            <li><strong>Km: </strong> {{el.km}}</li>
+
+                                            <li><strong>Modelo: </strong> Camaro</li>
+                                        </div>
+                                        <div class="col">
+                                            <li><strong>Placa: </strong>{{el.placa}} </li>
+                                            <li><strong>Marca: </strong> {{el.marca}}</li>
+                                            <li><strong>Km: </strong> {{el.km}}</li>
+
+                                            <li><strong>Modelo: </strong> Camaro</li>
+                                        </div>
+
+
+                                    </div>
+
+
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br>
+
+                    <!-- <div class="" style="margin-left: 7em;"> -->
+                    <div class="">
+
+                        <h4 style="text-align: center; color: #1c29c2;"> Detalle de la orden de ingreso: </h4>
+
+
+                        <h5 style="text-align: left; font-weight: bold; margin-left: 2em;">Problema por el que ingresó: {{ el.problema}}
+                            <!-- <h5 style="color: #1c29c2;"></h5> -->
+                        </h5>
+
+
+                        <!-- <p></p> -->
+
+
+                        <h5 style="text-align: left; font-weight: bold; margin-left: 2em;">Recomendaciones</h5>
+                        <div class="col ">
+
+                            <div class=" mb-3" id="divObservacion">
+
+                                <p id="parrafoImpresion" style=" margin-left: 0.8em; margin-right: 0.8em; text-align: justify;  font-size: 1em;">
+
+                                    El patio era de tierra, cerrado al oeste por un cerco de ladrillos. El banco quedaba paralelo a él, a cinco metros, y allí se mantenían inmóviles, fijos los ojos en los ladrillos. Como el sol se ocultaba tras el cerco, al declinar los idiotas tenían fiesta.
+                                    La luz enceguecedora llamaba su atención al principio.
+                                </p>
+
+                            </div>
+                        </div>
+
+                        <div id="idDetalles">
+                            <div class="row">
+                                <div class="col">
+                                    <h5 style="text-align: left; font-weight: bold;">Próximo Mantenimiento (Km)</h5>
+
+
+                                    <p>5000 km</p>
+                                </div>
+                                <div class="col">
+                                    <h5 style="text-align: left; font-weight: bold;">Fecha Próximo Mantenimiento</h5>
+
+
+                                    <p>2022/02/28</p>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col">
+                                    <h5 style="text-align: left; font-weight: bold;">Retira el Vehículo</h5>
+
+
+                                    <p>Adriana Carolina Córdova Campoverde </p>
+                                </div>
+                                <div class="col">
+                                    <h5 style="text-align: left; font-weight: bold;">Fecha y hora de ingreso:</h5>
+
+
+                                    <p>{{el.fecha}}</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <h4 style="text-align: center; color: #1c29c2;"> Próximo Servicio </h4>
+                        <table class="table">
+                            <thead>
+                                <tr style="text-align: center;">
+                                    <th scope="col">Cantidad</th>
+                                    <th scope="col">Detalle</th>
+                                    <th scope="col">Valor</th>
+                                    <th scope="col">Km</th>
+                                    <th scope="col">Prioridad Mantenimiento</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="text-align: center;">
+                                    <th scope="row">1</th>
+                                    <td>Limpieza Inyectores</td>
+                                    <td>20 $</td>
+                                    <td>37500</td>
+                                    <td>Próximo mes</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+
+            </tr>
+            <!-- <img src="https://drive.google.com/file/d/1uoKpyvwtKXPZPJqPN_g6-xDSTGzXlhO4/view" style=" max-width: 100%; height: auto" /> -->
+            <!-- <img class="d-block img-fluid" src="https://images.pexels.com/photos/8986145/pexels-photo-8986145.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"> -->
+            <hr>
+
+            <div class="divSelect mb-3">
+                <button type="button" class="btn  btO " data-dismiss="modal" style="background-color: #536DFE; color: white;"><i class="fas fa-arrow-circle-left"></i> SALIR </button>
+                <button class="btn  btO1" (click)="openPDF()" style="background-color: #7C4DFF;color: white;"><i class="fas fa-download"></i> Descargar PDF</button>
+                <button type="button" class="btn btO " style="background-color: #448AFF;color: white;"><i class="fas fa-paper-plane"></i> Enviar </button>
+
+                <!-- <button type="button" class="btn btn-warning btO " (click)="printTest()"> <i class="fas fa-print "></i> Imprimir</button> -->
+                <!-- <button type="button" class="btn btn-warning btO " onClick="printJS({ printable: 'htmlData', type: 'html', targetStyles: ['*']})"> <i class="fas fa-print "></i> Imprimir</button> -->
+
+            </div>
+        </div>
+    </div>
+
+    </html>
+</div>

@@ -1,1 +1,1230 @@
-/* You can add global styles to this file, and also import other style files */
+$cp: #393D40;
+// $cs: #FFCE2B;
+$cs: #828282;
+// $cs: #ffd670;
+$ct:#f0f0f0;
+$c4: #39C0ED;
+$body-font: "Roboto";
+// Font Weights
+$thin: 100;
+$light: 300;
+$regular: 400;
+$semibold: 500;
+$bold: 700;
+$ultra: 800;
+// Base Font
+$base-font-family: $body-font,
+sans-serif;
+$base-font-size: 14px;
+$base-font-weight: $regular;
+$base-line-height: 1.6em;
+// Colors
+$black: #000000;
+$dark-gray: rgba($black, 0.8);
+$gray: rgba($black, 0.6);
+$light-gray: rgba($black, 0.4);
+$lighter-gray: rgba($black, 0.2);
+$white: #FFFFFF;
+$accent: #4285F4;
+// Form Settings
+$max-width: 600px;
+$max-height: 400px;
+$gutters: 24px;
+body {
+    background: linear-gradient(#dadae6, #dbdbe7);
+    font-family: 'Ubuntu';
+    padding-right: 0 !important;
+    // width: 100vw;
+    // min-height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    font-size: xx-large;
+    font-family: 'Ubuntu';
+}
+
+h6 {
+    float: left;
+}
+
+.divSelect {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#p1 {
+    font-size: xx-large;
+    color: red;
+    font-weight: 700;
+    float: right;
+    font-family: 'Ubuntu';
+    margin-right: 3.3em;
+}
+
+.subTitulo {
+    // background-color: white;
+    color: white; // background-color: $cp;   
+    font-size: medium;
+    background-color: $cp;
+    font-family: 'Ubuntu';
+}
+
+#subTitulo1 {
+    // background-color: white;
+    // color: white; // background-color: $cp;   
+    font-size: medium;
+    background-color: $cs;
+    font-family: 'Ubuntu';
+    // text-align: center;
+}
+
+#subTitulo2 {
+    // background-color: white;
+    // color: white; // background-color: $cp;   
+    font-size: medium;
+    background-color: $c4;
+    font-family: 'Ubuntu';
+    // text-align: center;
+}
+
+h5 {
+    text-align: center;
+}
+
+.b1 {
+    // background-color: $cp;
+}
+
+.bt1 {
+    margin-right: 10em;
+    font-weight: 700;
+    float: right;
+    font-family: 'Ubuntu';
+}
+
+#labelFoto {
+    color: $cs;
+    text-transform: capitalize;
+    width: 9em;
+}
+
+.btO {
+    width: 10.5em;
+    font-size: 12px;
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    // float: right;
+    // margin-right: 5em;
+}
+
+.btO1 {
+    width: 11.1em;
+    font-size: 12px;
+    font-family: 'Ubuntu';
+    font-weight: bold;
+    // float: right;
+    // margin-right: 5em;
+}
+
+.bts {
+    font-family: 'Ubuntu';
+    font-weight: bold;
+}
+
+#cardON {
+    // width: 10em;
+    height: 4.9em;
+    font-family: 'Ubuntu';
+}
+
+#titleCard {
+    background-color: $cs;
+    color: white;
+}
+
+.divBotones {
+    float: right;
+}
+
+.box {
+    // border: 1px solid rgb(50, 50, 51);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    // background: #fff;
+    background: linear-gradient(to bottom, rgba(247, 247, 247, 0.8) 0%, rgba(255, 251, 251, 0.6) 100%);
+    transition: opacity 0.1s, transform 0.3s cubic-bezier(0.17, -0.65, 0.665, 1.25);
+    transform: scale(1);
+    -webkit-box-shadow: 0 30px 60px 0 rgba(153, 151, 151, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(158, 189, 176, 0.3);
+    text-align: center;
+}
+
+.cajaBotones {
+    padding-bottom: 2em;
+}
+
+@media (max-width:320px) {
+    #buscar {
+        float: left;
+        margin-left: 1.5em;
+    }
+    // .botonCrear {
+    //     margin-right: 1.5em;
+    // }
+    .cajaBotones {
+        padding-left: 3em;
+        justify-content: center;
+    }
+    .btO {
+        width: 14em;
+        font-size: 12px;
+        // float: right;
+        // margin-right: 5em;
+    }
+    .bts {
+        width: 14em;
+        font-family: 'Ubuntu';
+    }
+}
+
+@media only screen and (min-width:321px) and (max-width:360px) {
+    .container {
+        // margin-left: 1em;
+        // margin-right: 1em;
+    }
+    // 
+    #buscar {
+        float: left;
+        margin-left: 3em;
+    }
+    .botonCrear {
+        margin-right: 3em;
+    }
+    #boton-sidebar_left1 {
+        visibility: hidden;
+    }
+    .cajaBotones {
+        // padding-left: 3em;
+        margin-left: 1.2em;
+        justify-content: center;
+    }
+    .btO {
+        width: 10.5em;
+        font-size: 12p;
+    }
+    .bts {
+        width: 14em;
+        font-size: 12px;
+        // margin-left: 7em;
+        // justify-content: center;
+    }
+}
+
+@media only screen and (min-width:361px) and (max-width:767px) {
+    .container {
+        margin-top: 1;
+        margin-bottom: 1;
+    }
+}
+
+@media only screen and (min-width:767px) and (max-width:768px) {
+    #crearAtributos {
+        margin-left: 4em;
+        margin-right: 4em;
+    }
+    #idDetalles {
+        margin-left: 2.5em;
+    }
+    #divObservacion {
+        margin-left: 1em;
+    }
+    #cardPrint {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+    .tituloCard {
+        text-align: left;
+        font-weight: bold;
+        font-size: large;
+    }
+    .contenidoCard {
+        text-align: center;
+        font-weight: bold;
+    }
+    .footerCard {
+        font-size: large;
+    }
+    .modal-dialog {
+        width: 40em;
+    }
+    .container {
+        margin-top: 12em;
+        margin-bottom: 14em;
+    }
+    .tt2 {
+        margin-left: 2em;
+        margin-right: 2em;
+        width: 49em
+    }
+    .tt1 {
+        margin-left: 2em;
+        margin-right: 2em;
+        width: 49em;
+    }
+    #dropdownMenuButton {
+        padding-left: 1em;
+    }
+    #buscar {
+        float: left;
+        margin-left: 4.5em;
+    }
+    .botonCrear {
+        margin-right: 5em;
+    }
+    #subirFotos {
+        margin-right: 1em;
+    }
+    .fila {
+        margin-left: 0.5em;
+        margin-right: 1.5em;
+    }
+    .btO {
+        width: 10.5em;
+        font-size: 12p;
+    }
+    .bts {
+        width: 14em;
+        font-size: 12px;
+        // margin-left: 7em;
+        // justify-content: center;
+    }
+}
+
+@media only screen and (min-width:820px) and (max-width:1179px) {
+    #crearAtributos {
+        margin-left: 8em;
+        margin-right: 8em;
+    }
+    #divBotonesBusqueda {
+        margin-left: 20em;
+    }
+}
+
+@media only screen and (min-width:1180px) and (max-width:1181px) {
+    #crearAtributos {
+        margin-left: 9em;
+        margin-right: 9em;
+    }
+    #divBotonesBusqueda {
+        margin-left: 16em;
+    }
+}
+
+@media only screen and (min-width:769px) and (max-width:1023px) {
+    #divBotonesBusqueda {
+        margin-left: 1em;
+    }
+    #idDetalles {
+        margin-left: 3.5em;
+    }
+    #cardPrint {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+    #divObservacion {
+        margin-left: 1.5em;
+    }
+    .tituloCard {
+        text-align: left;
+        font-weight: bold;
+        font-size: x-large;
+    }
+    .contenidoCard {
+        text-align: center;
+        font-weight: bold;
+    }
+    .footerCard {
+        font-size: medium;
+        font-weight: bold;
+        color: white;
+        background-color: #F93154;
+    }
+    .container {
+        margin-top: 22em;
+        margin-bottom: 25.5em;
+    }
+    // .tt {
+    //     width: 65em;
+    // }
+    .tt2 {
+        margin-left: 2em;
+        margin-right: 2em;
+        width: 66em
+    }
+    .tt1 {
+        margin-left: 2em;
+        margin-right: 2em;
+        width: 66em;
+    }
+    #dropdownMenuButton {
+        padding-left: 3.6em;
+    }
+    #buscar {
+        float: left;
+        margin-left: 3em;
+    }
+    .botonCrear {
+        margin-right: 10em;
+    }
+    .cajaBotones {
+        padding-left: 19em;
+    }
+    .btO {
+        width: 10.5em;
+        font-size: 12p;
+    }
+    .bts {
+        width: 14em;
+        font-size: 12px;
+        // margin-left: 7em;
+        // justify-content: center;
+    }
+    .divGO {
+        padding-left: 37em;
+        font-weight: bold;
+    }
+}
+
+@media only screen and (min-width:1181px) and (max-width:1366px) {
+    #crearAtributos {
+        margin-left: 10em;
+        margin-right: 10em;
+    }
+    #divBotonesBusqueda {
+        margin-left: 16em;
+    }
+    #idDetalles {
+        margin-left: 3em;
+    }
+    #tituloPrint {
+        // margin-left: 1em;
+    }
+    #divObservacion {
+        margin-left: 1em;
+    }
+    #cardPrint {
+        margin-left: 0.5em;
+        margin-right: 0.5em;
+    }
+    // .items {
+    //     width: 70%;
+    //     margin: 0px auto;
+    //     // margin-top: 100px
+    // }
+    .container {
+        margin-top: 5em;
+        margin-bottom: 5em;
+    }
+    .tt2 {
+        width: 70em;
+        margin-left: 11.5em;
+    }
+    .tt1 {
+        width: 70em;
+        margin-left: 11.5em;
+    }
+    #dropdownMenuButton {
+        padding-left: 7em;
+    }
+    #buscar {
+        float: left;
+        margin-left: 3em;
+    }
+    .botonCrear {
+        margin-right: 6em;
+    }
+    #boton-sidebar_left {
+        visibility: hidden;
+    }
+    .cajaBotones {
+        // padding-left: 3em;
+        // margin-left: 10em;
+        // float: right;
+        // justify-content: center;
+        padding-left: 40em;
+    }
+    .btO {
+        width: 10.5em;
+        font-size: 12p;
+    }
+    .bts {
+        width: 14em;
+        // height: 4em;
+        font-size: 12px;
+        font-family: 'Ubuntu';
+    }
+    .divGO {
+        padding-left: 55em;
+        font-weight: bold;
+    }
+}
+
+@media only screen and (min-width:1367px) and (max-width:1920px) {
+    #CARDS {
+        margin-left: 15em;
+        margin-right: 15em;
+    }
+    #crearAtributos {
+        margin-left: 20em;
+        margin-right: 20em;
+    }
+    #divBotonesBusqueda {
+        margin-left: 21em;
+    }
+    #idDetalles {
+        margin-left: 3em;
+    }
+    #cardPrint {
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    #divObservacion {
+        // margin-left: 6em;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+    .tituloCard {
+        font-size: x-large;
+        text-align: left;
+    }
+    .contenidoCard {
+        font-size: large;
+        text-align: center;
+        font-weight: bold;
+    }
+    .footerCard {
+        font-size: large;
+    }
+    .tituloCard1 {
+        font-size: x-large;
+        text-align: left;
+    }
+    .contenidoCard1 {
+        text-align: center;
+        font-weight: bold;
+    }
+    .footerCard1 {
+        font-size: medium;
+    }
+    .tituloCard2 {
+        font-size: x-large;
+        text-align: left;
+    }
+    .contenidoCard2 {
+        text-align: center;
+        font-weight: bold;
+    }
+    .footerCard2 {
+        font-size: medium;
+    }
+    .container {
+        margin-top: 10em;
+        margin-bottom: 12.2em;
+    }
+    .tt2 {
+        width: 98.5em;
+        margin-left: 16.5em;
+    }
+    .tt1 {
+        width: 98.5em;
+        margin-left: 16.5em;
+    }
+    #dropdownMenuButton {
+        padding-left: 12.3em;
+    }
+    #buscar {
+        float: left;
+        margin-left: 10.5em;
+    }
+    .botonCrear {
+        margin-right: 20em;
+    }
+    #boton-sidebar_left {
+        visibility: hidden;
+    }
+    .cajaBotones {
+        // padding-left: 3em;
+        // margin-left: 10em;
+        // float: right;
+        // justify-content: center;
+        padding-left: 64em;
+    }
+    .btO {
+        width: 10.5em;
+        font-size: 12p;
+    }
+    .bts {
+        width: 14em;
+        font-size: 12px;
+        // margin-left: 7em;
+        // justify-content: center;
+    }
+    .divGO {
+        padding-left: 80em;
+        font-weight: bold;
+    }
+    #p1 {
+        margin-right: 6.2em;
+    }
+}
+
+// /* Importing Bootstrap SCSS file. */
+// @import '~bootstrap/scss/bootstrap';
+// =========================================================================================
+.main-panel {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, rgba(247, 247, 247, 0.8) 0%, rgba(255, 251, 251, 0.6) 100%);
+    transition: .5s;
+    float: right;
+    font-family: 'Ubuntu';
+}
+
+.content {
+    padding: 50px 30px 30px 280px;
+    transition: 0.5;
+}
+
+.main {
+    padding: 50px 30px 30px 130px;
+    transition: 0.5;
+}
+
+.p1 {
+    text-align: center;
+    // margin-top: 4em;
+    // margin-bottom: 2em;
+    font-weight: bold;
+    font-size: 1.8em;
+    color: $cp;
+    margin-bottom: 1em // font-family: 'Heebo';
+    ;
+}
+
+// #buscar {
+//     float: left;
+// }
+.botonCrear {
+    width: 18em;
+    font-size: 12px;
+    height: 3.5em;
+    // color: #00154f;
+    // color: $cp;
+    color: white;
+    font-weight: bold;
+    // background-color: #f4af1b;
+    // background-color: #44F4FF;
+    // background-color: $cp;
+    background: linear-gradient(to left, rgba(143, 142, 142, 0.8) 0%, rgba(150, 148, 148, 0.849) 100%);
+    float: right;
+}
+
+// ==========================TABLA======================================
+.thead {
+    // background: linear-gradient(to left, rgba(99, 98, 98, 0.8) 0%, rgba(19, 18, 18, 0.849) 100%);
+    background-color: $cp;
+    opacity: .90;
+    // background-color: $cs;
+    color: white; // color: #f0f0f0;
+    font-family: 'Roboto';
+    // text-align: center;
+}
+
+.thead1 {
+    background-color: rgba(233, 231, 231, 0.829);
+    color: black;
+    font-family: 'Roboto';
+    // text-align: center;
+}
+
+.tbody {
+    // background: linear-gradient(#fcfcfc, #ffffff);
+    background-color: white;
+    font-weight: bold;
+    // font-family: 'Roboto';
+    // text-align: center;
+}
+
+.tt {
+    text-align: center;
+    font-family: 'Roboto';
+    // width: 100em;
+}
+
+// =========================== BOTONES TABLE=====================================
+.bEditar {
+    height: 3.5em;
+    min-width: 12.9em;
+    // background-color: $cs;
+    background-color: $cs;
+    color: $ct;
+    font-weight: bold;
+    opacity: .70;
+}
+
+.bEliminar {
+    // opacity: .65;
+    height: 3.5em;
+    min-width: 13.3em;
+    // color: #f4af1b;
+    color: $ct;
+    background-color: #39C0ED;
+    // background-color: #00154f;
+    font-weight: bold;
+}
+
+// ================================== RESOLUCION ======================================
+.toggle {
+    width: 80px !important;
+}
+
+.toggle .logo-rc {
+    padding: 10px 0px 15px 0px;
+}
+
+.toggle .logo-rc::after {
+    width: 70%;
+    left: 15px;
+}
+
+.toggle .logo-rc span {
+    opacity: 0;
+    transform: translate3d(-25px, 0, 0);
+}
+
+.toggle .nav ul li a span {
+    opacity: 0;
+    transform: translate3d(-25px, 0, 0);
+}
+
+@media only screen and (max-width: 1200px) {
+    .sidebar {
+        position: fixed;
+        display: block;
+        top: 0;
+        height: 100vh;
+        width: 260px!important;
+        right: auto;
+        left: 0;
+        margin: 0;
+        border-radius: 0;
+        z-index: 1032;
+        visibility: visible;
+        overflow-y: visible;
+        padding: 0;
+        transition: .5s cubic-bezier(.685, .0473, .346, 1);
+        transform: translate3d(-260px, 0, 0);
+    }
+    .sidebar.toggle {
+        transition: 0.5;
+        z-index: 1000;
+    }
+    .sidebar-wrapper {
+        transition-property: top, bottom, width;
+        transition-duration: .2s, .2s, .35s;
+        transition-timing-function: linear, linear,
+    }
+    .main-panel>.content {
+        padding-left: 30px;
+    }
+    .navbar-bar_fixed button {
+        display: none;
+    }
+    .navbar-bar button#boton-sidebar {
+        display: none;
+    }
+    .navbar-bar button#boton-sidebar_left {
+        display: block;
+    }
+    .nav-open .sidebar {
+        transition: .5s cubic-bezier(.685, .0473, .346, 1);
+        transform: translateZ(0);
+    }
+    .nav-open .main-panel {
+        right: 0;
+        transform: translate3d(260px, 0, 0);
+        transition: .5s cubic-bezier(.685, .0473, .346, 1);
+    }
+    .toggle .logo-rc span {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    .toggle .nav ul li a span {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+// ================================== MODALES ========================================
+.mh {
+    background-color: $cs;
+    color: white;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.8em;
+}
+
+#tituloForm {
+    // padding: 4px 0;
+    color: $accent;
+    font-size: 24px;
+    font-weight: $bold;
+    text-transform: uppercase;
+}
+
+#tituloF {
+    // display: block;
+    // margin: 0 0 10px;
+    color: $gray;
+    font-size: 12px;
+    width: 100%;
+    font-weight: $semibold;
+    // line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: .3em;
+}
+
+// #tituloF1 {
+//     // display: block;
+//     // margin: 0 0 10px;
+//     color: $gray;
+//     font-size: 16px;
+//     width: 100%;
+//     font-weight: $semibold;
+//     // line-height: 1;
+//     // text-transform: uppercase;
+//     letter-spacing: .2em;
+// }
+#floatingInputNombre {
+    // outline: none;
+    // display: block;
+    background: rgba($black, 0.1);
+    width: 100%;
+    border: 0;
+    border-radius: 4px;
+    // box-sizing: border-box;
+    // padding: 12px 20px;
+    color: $gray;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: $semibold;
+    line-height: inherit;
+    transition: 0.3s ease;
+    // &:focus {
+    //     color: $dark-gray;
+    // }
+}
+
+#floatingInputNombre1 {
+    // outline: none;
+    // display: block;
+    background: rgba(white, 0.7);
+    width: 100%;
+    border: 0;
+    border-radius: 4px;
+    // box-sizing: border-box;
+    // padding: 12px 20px;
+    color: $gray;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: $semibold;
+    line-height: inherit;
+    transition: 0.3s ease;
+    // &:focus {
+    //     color: $dark-gray;
+    // }
+}
+
+#tA {
+    outline: none;
+    display: block;
+    background: rgba($black, 0.1);
+    width: 100%;
+    height: 7em;
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    // padding: 12px 20px;
+    color: $gray;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: $semibold;
+    line-height: inherit;
+    transition: 0.3s ease;
+    &:focus {
+        color: $dark-gray;
+    }
+}
+
+#selectModal {
+    outline: none;
+    display: block;
+    background: rgba($black, 0.1);
+    width: 100%;
+    // height: 7em;
+    border: 0;
+    border-radius: 4px;
+    box-sizing: border-box;
+    // padding: 12px 20px;
+    color: $gray;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: $semibold;
+    line-height: inherit;
+    transition: 0.3s ease;
+    &:focus {
+        color: $dark-gray;
+    }
+}
+
+hr {
+    border-top: 1px solid $cp;
+}
+
+input {
+    font-family: 'Roboto';
+}
+
+textarea {
+    font-family: 'Roboto';
+}
+
+.btnGuardar {
+    background-color: $cs;
+    color: white;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.btnModal {
+    color: white;
+    background-color: $c4;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.titulo-eliminar {
+    text-align: center;
+    font-family: 'Roboto';
+    // color: #104c91;
+    color: $cs;
+    font-weight: 400;
+    margin-top: 3em;
+    // font-weight: bold;
+}
+
+//  ======================================= PLANEADOR ===============================================
+// style="background-color: red; color: white; font-family: 'Ubuntu';font-weight: bold; "
+.tituloCard {
+    font-weight: bold;
+    color: white;
+    background-color: #F93154;
+}
+
+.contenidoCard {
+    text-align: center;
+    font-weight: bold;
+}
+
+.footerCard {
+    // font-weight: bold;
+    color: white;
+    background-color: #F93154;
+}
+
+.tituloCard1 {
+    font-weight: bold;
+    color: black;
+    background-color: rgb(247, 217, 47);
+    // font-family: 'Ubuntu';
+}
+
+.contenidoCard1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.footerCard1 {
+    font-weight: bold;
+    color: black;
+    background-color: rgb(247, 217, 47);
+    ;
+}
+
+.tituloCard2 {
+    font-weight: bold;
+    color: white;
+    background-color: #00B74A;
+    // font-family: 'Ubuntu';
+}
+
+.contenidoCard2 {
+    text-align: center;
+    font-weight: bold;
+}
+
+.footerCard2 {
+    font-weight: bold;
+    color: white;
+    background-color: #00B74A;
+}
+
+// ===================================================LOGIN ===============================================
+// .container {
+//     margin-top: 10em;
+//     margin-bottom: 12.2em;
+// }
+.login-block {
+    background: linear-gradient(to bottom, rgb(165, 158, 158), black);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    // float: left;
+    width: 100%;
+    // max-height: 100vh;
+    padding: 2.6% 0;
+}
+
+.banner-sec {
+    background: url(https://images.pexels.com/photos/474/black-and-white-car-vehicle-vintage.jpg?auto=compress&cs=tinysrgb&h=750&w=1260) no-repeat left bottom;
+    background-size: cover;
+    min-height: 500px;
+    border-radius: 0 10px 10px 0;
+    padding: 0;
+}
+
+.container {
+    // background: #fff;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 15px 20px 0px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+    border-radius: 0 10px 10px 0;
+}
+
+.carousel-caption {
+    text-align: left;
+    left: 5%;
+}
+
+.login-sec {
+    padding: 50px 30px;
+    position: relative;
+}
+
+.login-sec .copy-text {
+    position: absolute;
+    width: 80%;
+    bottom: 20px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.login-sec .copy-text i {
+    color: #FEB58A;
+}
+
+.login-sec .copy-text a {
+    color: #E36262;
+}
+
+.login-sec h2 {
+    margin-bottom: 30px;
+    font-weight: 800;
+    font-size: 30px;
+    // color: #DE6262;
+    color: $cp;
+}
+
+.login-sec h2:after {
+    content: " ";
+    width: 100px;
+    height: 5px;
+    // background: #FEB58A;
+    background: $cs;
+    ;
+    display: block;
+    margin-top: 20px;
+    border-radius: 3px;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.btn-login {
+    // background: #DE6262;
+    background: $cp;
+    color: #fff;
+    font-weight: 600;
+}
+
+.banner-text {
+    width: 70%;
+    position: absolute;
+    bottom: 40px;
+    padding-left: 20px;
+}
+
+.banner-text h2 {
+    color: #fff;
+    font-weight: 600;
+}
+
+.banner-text h2:after {
+    content: " ";
+    width: 100px;
+    height: 5px;
+    background: #FFF;
+    display: block;
+    margin-top: 20px;
+    border-radius: 3px;
+}
+
+.banner-text p {
+    color: #fff;
+}
+
+// ================================================= TITULOS MODAL =========================================================
+.titulosModal {
+    // font-weight: bold;
+    font-family: 'Roboto';
+}
+
+#tituloForm {
+    color: #39C0ED;
+}
+
+// ____________________________________________________ card  CAROUSEL ---------------------------------------------------------
+.items {
+    width: 50%;
+    // margin: 0px auto;
+    // margin-top: 100px
+}
+
+.slick-slide {
+    margin: 4px
+}
+
+.slick-slide img {
+    // width: 100%;
+    border: 0px solid #fff
+}
+
+.slider {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.slider card {
+    flex: 0 0 100%;
+    width: 100%;
+    object-fit: cover;
+    scroll-snap-align: center;
+}
+
+// fix para CodePen
+body {
+    margin: 0;
+}
+
+// =========================================== BOTON SEARCH =====================================================
+fieldset {
+    position: relative;
+    display: inline-block;
+    padding: 0 0 0 2.5em;
+    background: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+#btnSearch,
+#bSearch {
+    position: relative;
+    width: 9em;
+    height: 2.6em;
+    padding: 0;
+    display: inline-block;
+    float: left;
+}
+
+#btnSearch {
+    color: #666;
+    z-index: 2;
+    border: 0 none;
+}
+
+#btnSearch:focus {
+    outline: 0 none;
+}
+
+#btnSearch:focus+button {
+    -webkit-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+#btnSearch:focus+button .fa {
+    -webkit-transform: translate(0px, 0);
+    -ms-transform: translate(0px, 0);
+    transform: translate(0px, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    color: #fff;
+}
+
+#bSearch {
+    z-index: 1;
+    width: 50px;
+    border: 0 none;
+    background: #39C0ED;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    -webkit-transform: translate(-50px, 0);
+    -ms-transform: translate(-50px, 0);
+    transform: translate(-50px, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
+
+#idSearch {
+    font-size: 1.4rem;
+    // color: #39C0ED;
+    color: #39C0ED;
+    ;
+    z-index: 3;
+    top: 25%;
+    -webkit-transform: translate(-190px, 0);
+    -ms-transform: translate(-190px, 0);
+    transform: translate(-190px, 0);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+// ======================== IMPRESION CSS ==================================
+#parrafoImpresion {
+    text-align: justify;
+}
+
+#h1PDF {
+    color: red;
+    text-align: center;
+}

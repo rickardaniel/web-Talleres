@@ -1,0 +1,38 @@
+{
+    "data": [
+
+        {
+            "nombre": "Marca",
+            "detalle": "Esta es la marca del automóvil",
+            "orden": "Primera"
+        },
+        {
+            "nombre": "Modelo",
+            "detalle": "Esta es la marca del automóvil",
+            "orden": "Segunda"
+        },
+        {
+            "nombre": "Año",
+            "detalle": "Esta es la marca del automóvil",
+            "orden": "Primera"
+        },
+        {
+            "nombre": "Kilometros",
+            "detalle": "Esta es la marca del automóvil",
+            "orden": "Primera"
+        },
+        {
+            "nombre": "Sistema",
+            "detalle": "Esta es la marca del automóvil",
+            "orden": "Primera"
+        },
+        {
+            "nombre": "Marca",
+            "detalle": "Esta es la marca del automóvil",
+            "orden": "Primera"
+        }
+
+
+
+    ]
+}

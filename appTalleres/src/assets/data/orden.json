@@ -1,0 +1,223 @@
+{
+    "data": [{
+            "id": "111",
+            "secuencia": "8",
+            "fecha": "2022-01-18",
+            "nombres": " MANUEL EULOGIO ",
+            "apellidos": "ZARI MOROCHO",
+            "estado": "1.INGRESO",
+            "prioridad": "Urgente",
+            "atributo": "Placa",
+            "valor": "LBA035"
+        },
+        {
+            "id": "109",
+            "secuencia": "1",
+            "fecha": "2022-01-17",
+            "nombres": "CHRISTIAN ANDRES",
+            "apellidos": "VILLACIS ORELLANA",
+            "estado": "1.INGRESO",
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "XYZ456"
+        },
+        {
+            "id": "108",
+            "secuencia": "6",
+            "fecha": "2022-01-17",
+            "nombres": " MANUEL EULOGIO ",
+            "apellidos": "ZARI MOROCHO",
+            "estado": "2.POST VENTA CHEQUEO ",
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "LBA035"
+        },
+        {
+            "id": "103",
+            "secuencia": "1",
+            "fecha": "2022-01-17",
+            "nombres": " MANUEL EULOGIO ",
+            "apellidos": "ZARI MOROCHO",
+            "estado": "1.INGRESO",
+            "prioridad": "Urgente",
+            "atributo": "Placa",
+            "valor": "LBA035"
+        },
+        {
+            "id": "95",
+            "secuencia": "2",
+            "fecha": "2022-01-10",
+            "nombres": "JULIO MIGUEL",
+            "apellidos": "CARCHIPULLA SAGBAY",
+            "estado": "1.INGRESO",
+            "prioridad": "Urgente",
+            "atributo": "Placa",
+            "valor": "XYZ456"
+        },
+        {
+            "id": "94",
+            "secuencia": "1",
+            "fecha": "2022-01-10",
+            "nombres": "CHRISTIAN ANDRES",
+            "apellidos": "VILLACIS ORELLANA",
+            "estado": "1.INGRESO",
+            "prioridad": "Urgente",
+            "atributo": "Placa",
+            "valor": "XYZ456"
+        },
+        {
+            "id": "92",
+            "secuencia": "329",
+            "fecha": "2021-11-17",
+            "nombres": "WILMER ALEJANDRO",
+            "apellidos": "BARRETO GRANDA",
+            "estado": "4.LISTO PARA ENTREGAR",
+            "prioridad": "Recomendado",
+            "atributo": "Placa",
+            "valor": "lbs0881"
+        },
+        {
+            "id": "91",
+            "secuencia": "361",
+            "fecha": "2021-11-10",
+            "nombres": "PAULETTE SALOME ",
+            "apellidos": "GALVEZ CORDERO",
+            "estado": "1.INGRESO",
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "12479"
+        },
+        {
+            "id": "90",
+            "secuencia": "327",
+            "fecha": "2021-11-08",
+            "nombres": "TITO",
+            "apellidos": "VALAREZO",
+            "estado": "4.LISTO PARA ENTREGAR",
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "lbs0881"
+        },
+        {
+            "id": "89",
+            "secuencia": "903",
+            "fecha": "2021-10-22",
+            "nombres": "JONI",
+            "apellidos": "ZHUNAULA",
+            "estado": "4.LISTO PARA ENTREGAR",
+            "prioridad": "Urgente",
+            "atributo": "Placa",
+            "valor": "pvi0326"
+        },
+        {
+            "id": "88",
+            "secuencia": "864",
+            "fecha": "2021-10-18",
+            "nombres": "TITO ANDRES",
+            "apellidos": "VALAREZO FLORES ",
+            "estado": "2. EN PROCESO",
+            "prioridad": "Recomendado",
+            "atributo": "Placa",
+            "valor": "lbs0881"
+        },
+        {
+            "id": "87",
+            "secuencia": "965",
+            "fecha": "2021-10-16",
+            "nombres": "TITO",
+            "apellidos": "VALAREZO",
+            "estado": "4.LISTO PARA ENTREGAR",
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "lbs0881"
+        },
+        {
+            "id": "86",
+            "secuencia": "271",
+            "fecha": "2021-10-11",
+            "nombres": "EDISON ",
+            "apellidos": "MACAS ",
+            "estado": "1.INGRESO",
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "lba001"
+        },
+        {
+            "id": "85",
+            "secuencia": "130",
+            "fecha": "2021-10-06",
+            "nombres": "SANTIAGO SEBASTIáN",
+            "apellidos": "VALDIVIESO POLO",
+            "estado": "1.INGRESO",
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "Pbd4978"
+        },
+        {
+            "id": "84",
+            "secuencia": "833",
+            "fecha": "2021-10-05",
+            "nombres": "TITO",
+            "apellidos": "VALAREZO",
+            "estado": "4.LISTO PARA ENTREGAR",
+            "prioridad": "Recomendado",
+            "atributo": "Placa",
+            "valor": "lbs0881"
+        },
+        {
+            "id": "83",
+            "secuencia": "754",
+            "fecha": "2021-09-24",
+            "nombres": "EDGAR ADRIAN",
+            "apellidos": "LEDESMA CORDOVA",
+            "estado": "4.LISTO PARA ENTREGAR",
+            "prioridad": "Urgente",
+            "atributo": "Placa",
+            "valor": "LBD-1526"
+        },
+        {
+            "id": "82",
+            "secuencia": "768",
+            "fecha": "2021-09-24",
+            "nombres": "PAUL SEBASTIAN ",
+            "apellidos": "AGUIRRE CARDENAS",
+            "estado": "2.POST VENTA CHEQUEO ",
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "lbs0881"
+        },
+        {
+            "id": "81",
+            "secuencia": "445",
+            "fecha": "2021-09-24",
+            "nombres": "EDGAR RODRIGO",
+            "apellidos": "LEDESMA NIETO",
+            "estado": "1.INGRESO",
+            "prioridad": "Recomendado",
+            "atributo": "Placa",
+            "valor": "TDL789"
+        },
+        {
+            "id": "80",
+            "secuencia": "142",
+            "fecha": "2021-09-23",
+            "nombres": "EDGAR RODRIGO",
+            "apellidos": "LEDESMA NIETO",
+            "estado": "1.INGRESO",
+            "prioridad": "Recomendado",
+            "atributo": "Placa",
+            "valor": "AVD456"
+        },
+        {
+            "id": "79",
+            "secuencia": "390",
+            "fecha": "2021-09-23",
+            "nombres": "EDGAR ADRIAN",
+            "apellidos": "LEDESMA CORDOVA",
+            "estado": "1.INGRESO",
+            "prioridad": "Normal",
+            "atributo": "Placa",
+            "valor": "LBD-1526"
+        }
+    ]
+}

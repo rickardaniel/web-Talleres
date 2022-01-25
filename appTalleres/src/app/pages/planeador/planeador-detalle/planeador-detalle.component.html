@@ -1,0 +1,218 @@
+<!-- ========================================================== Tabla ================================================================= -->
+
+<div class="box m-1 ">
+    <div class="table-responsive">
+        <!-- <div class="row">
+        <div class="col col-xl-12 col-lg-12 col-sm-12"> -->
+        <table mdbTable #tableEl="mdbTable" class="tt2 table mt-2">
+            <thead class="thead">
+                <tr>
+                    <th scope="col"><i class="fas fa-hashtag"></i> No.</th>
+                    <th scope="col"><i class="far fa-calendar-alt"></i> Fecha</th>
+                    <th scope="col"><i class="fas fa-user"></i> Cliente</th>
+                    <th scope="col"><i class="far fa-id-card"></i> Placa</th>
+                    <th scope="col"><i class="fas fa-car-side"></i> Marca</th>
+                    <th scope="col"><i class="fas fa-tachometer-alt"></i> Km</th>
+                    <th scope="col"><i class="fas fa-exclamation-triangle"></i> Problema</th>
+                </tr>
+            </thead>
+            <tbody class="tbody">
+
+                <tr mdbTableCol *ngFor="let el of elements2">
+                    <th scope="row">{{el.secuencia}}</th>
+                    <td>{{el.fecha}}</td>
+                    <td>{{el.nombres |titlecase}} {{el.apellidos |titlecase}}</td>
+                    <td>{{el.valor}}</td>
+                    <td>{{el.marca}}</td>
+                    <td>{{el.km}}</td>
+                    <td>{{el.problema}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- </div>
+</div> -->
+
+    <div class=" mt-4 divBusqueda">
+
+
+        <div class=" divSelect">
+
+            <div class="col col-xl-1 col-lg-2 col-md-2 mr-2">
+                <h5>
+                    <mdb-badge id="subTitulo1" type="button"> Buscar item <i class="fas fa-search"></i></mdb-badge>
+                </h5>
+            </div>
+
+            <div class="col col-xl-3 col-lg-3 col-md-4">
+                <input type="search" class="form-control" placeholder="Buscar">
+            </div>
+            <div class="col col-xl-2 col-lg-2 col-md-2">
+
+                <input type="number" class="form-control" placeholder="Cantidad" min="0" oninput="this.value = 
+            !!this.value && Math.abs(this.value) >= 0 ? Math.abs(this.value) : null">
+            </div>
+            <div class="col col-xl-2 col-lg-4  col-md-3">
+                <button class="btn btn-primary btO"><i class="fas fa-cart-plus"></i> Agregar</button>
+                <button class="btn btO"><i class="fas fa-plus"></i> Nuevo</button>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- <br> -->
+
+    <h1 class="mt-4">
+        Mano de obra - Servicios
+    </h1>
+
+    <div class="table-responsive">
+        <!-- <div class="row">
+        <div class="col col-xl-12 col-lg-12"> -->
+        <table mdbTable #tableEl="mdbTable" class="tt1 table">
+            <thead class="thead1">
+
+                <tr>
+                    <th scope="col">Técnico</th>
+                    <th scope="col">Servicio</th>
+                    <th scope="col">Detalle</th>
+                    <th scope="col">Cod.</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Mano-Obra</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Acciones</th>
+
+
+                </tr>
+            </thead>
+            <tbody class="tbody">
+
+                <tr mdbTableCol *ngFor="let el of elements2">
+                    <th scope="row">Edison Guarnizo</th>
+                    <td>Cambio de zapatas </td>
+                    <td>Se le reemplazo las zapatas al vehículo por nuevas</td>
+                    <td>MCZ001</td>
+                    <td>Zapatas 4x4</td>
+                    <td>S.Técnico Preventivo</td>
+                    <td>1</td>
+                    <th style="font-weight: bold;">30.12</th>
+                    <td>
+                        <div class="button-group">
+
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEditarAtributo"><i class="fas fa-pencil-alt"></i></button>
+                            <button type="button" class="btn  btn-info " data-toggle="modal" data-target="#modalEditarAtributo"><i class="fas fa-trash "></i> </button>
+
+
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <!-- </div>
+
+</div> -->
+    <!-- ========================================================================= REPUESTOS - PIEZAS ============================================================================================= -->
+
+
+    <h1 class="mt-4">
+        Repuestos Utilizados
+    </h1>
+
+    <div class="table-responsive ">
+        <!-- <div class="row">
+        <div class="col col-xl-12 col-lg-12"> -->
+        <table mdbTable #tableEl="mdbTable" class="tt1 table">
+            <thead class="thead1">
+                <!-- <tr>
+                        <th scope="col"><i class="fas fa-user"></i> Técnico</th>
+                        <th scope="col"><i class="far fa-calendar-alt"></i> Servicio</th>
+                        <th scope="col"><i class="fas fa-user"></i> Detalle</th>
+                        <th scope="col"><i class="far fa-id-card"></i> Cod.</th>
+                        <th scope="col"><i class="fas fa-car-side"></i> Item</th>
+                        <th scope="col"><i class="fas fa-tachometer-alt"></i> Mano-Obra</th>
+                        <th scope="col"><i class="fas fa-exclamation-triangle"></i> Cantidad</th>
+                        <th scope="col"><i class="fas fa-exclamation-triangle"></i> Valor</th>
+                        <th scope="col"><i class="fas fa-exclamation-triangle"></i> Acciones</th>
+
+
+                    </tr> -->
+                <tr>
+                    <th scope="col">Técnico</th>
+                    <th scope="col">Servicio</th>
+                    <th scope="col">Detalle</th>
+                    <th scope="col">Cod.</th>
+                    <th scope="col">Item</th>
+                    <th scope="col">Repuesto</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">Valor</th>
+                    <th scope="col">Acciones</th>
+
+
+                </tr>
+            </thead>
+            <tbody class="tbody">
+
+                <tr mdbTableCol *ngFor="let el of elements2">
+                    <th scope="row">Edison Guarnizo</th>
+                    <td>Cambio de zapatas </td>
+                    <td>Se le reemplazo las zapatas al vehículo por nuevas</td>
+                    <td>MCZ001</td>
+                    <td>Zapatas 4x4</td>
+                    <td>S.Técnico Preventivo</td>
+                    <td>1</td>
+                    <th style="font-weight: bold;">30.12</th>
+                    <td>
+                        <div class="button-group">
+
+                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEditarAtributo"><i class="fas fa-pencil-alt"></i></button>
+                            <button type="button" class="btn  btn-info " data-toggle="modal" data-target="#modalEditarAtributo"><i class="fas fa-trash "></i> </button>
+
+
+                        </div>
+                    </td>
+
+                </tr>
+            </tbody>
+            <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th style="font-weight: bold;">Total: </th>
+                <th style="font-weight: bold; font-size:large;">60.24 </th>
+            </tr>
+        </table>
+    </div>
+    <!-- </div>
+
+</div> -->
+
+    <!-- <hr> -->
+    <div>
+
+        <button class="btn btn-info btO" data-toggle="modal" data-target=".bd-example-modal-xl" (click)="cerrarCaso(elements2)">Cerrar caso</button>
+        <button class="btn btn-primary btO"> <i class="fas fa-clipboard-list"></i> Servicio</button>
+        <button class="btn btn-primary btO"><i class="fas fa-wrench"></i> Repuesto</button>
+        <button class="btn btn-primary btO"> <i class="fas fa-list-alt"></i> Todo</button>
+        <button class="btn btn-warning btO"><i class="fas fa-print"></i> Imprimir</button>
+        <!-- <button class="btn btn-Success btO"><i class="fas fa-reply-all"></i> Reenviar</button> -->
+        <button type="button " class="btn btO " style="background-color: #03A9F4; color: white; " data-toggle="modal " data-target=".bd-example-modal-xl "><i class="fas fa-reply "></i> Reenviar</button>
+
+        <button class="btn btn-success btO"> <i class="fab fa-whatsapp"></i> WhatsApp</button>
+
+    </div>
+    <br>
+</div>
+<br>
+
+<!-- <app-cerrar-orden [elements3]="elements3"></app-cerrar-orden> -->
+
+<app-cerrar-orden [elements3]="elements3"></app-cerrar-orden>
